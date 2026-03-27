@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids#how-to-get-profile-ids-0 -->
+<html class="no-js" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="og:image" content="https://static.helpjuice.com/helpjuice_production/uploads/question/preview_image/16296/2224889/preview-e66747719f36e3eab911e73abc89218c20260327-2-azyfb8.png">
+
+
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/pixel.js.download"></script><script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/pixel.js.download"></script><script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/pixel.js.download"></script><script async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/clarity.js.download"></script><script async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/pixel(1).js.download"></script><script async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/tag.js.download"></script><script async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/hnckyd0h4f"></script><script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/uwt.js.download"></script><script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/js"></script><script type="text/javascript" async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/pixel.js.download"></script><script async="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/gtm.js.download"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NB64HVB');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src &#39;self&#39; https://static.helpjuice.com https://multiloginx.helpjuice.com https://www.google-analytics.com https://fonts.gstatic.com https://fonts.googleapis.com;
+        img-src &#39;self&#39; https://* data: &#39;unsafe-inline&#39;;
+        child-src https://secure.livechatinc.com;
+        style-src &#39;self&#39; https://static.helpjuice.com https://multiloginx.helpjuice.com https://multiloginx.helpjuice.com https://fonts.googleapis.com https://cdnjs.cloudflare.com &#39;unsafe-inline&#39;;
+        script-src &#39;self&#39; https://static.helpjuice.com https://multiloginx.helpjuice.com https://multiloginx.helpjuice.com https://helpjuice.com https://www.googletagmanager.com https://www.google-analytics.com https://code.jquery.com https://cdnjs.cloudflare.com https://cdn.livechatinc.com https://api.livechatinc.com https://js-agent.newrelic.com https://www.clarity.ms https://scripts.clarity.ms &#39;unsafe-inline&#39;;
+        connect-src &#39;self&#39; https://multiloginx.helpjuice.com https://help.multilogin.com https://bam.nr-data.net https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.google.com https://multilogin.com https://multiloginx.helpjuice.com https://www.clarity.ms https://scripts.clarity.ms https://i.clarity.ms wss://helpjuice.com;
+        frame-src https://www.youtube.com https://secure.livechatinc.com https://www.googletagmanager.com;
+        font-src &#39;self&#39; https://fonts.gstatic.com https://fonts.googleapis.com;
+      ">
+
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
+    
+
+    
+        <link rel="canonical" href="https://multilogin.com/help/en_US/retrieving-folder-workspace-ids">
+    
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"56aae830c8","applicationID":"15354177","transactionName":"JllXTUtXClVdF00NCwpBVVxdXwNmWgQRA0oOWFZOVV0CXl1KEQ4KEg==","queueTime":2,"applicationTime":123,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:"56aae830c8",applicationID:"15354177",browserID:"15354210"};;/*! For license information please see nr-loader-rum-1.310.1.min.js.LICENSE.txt */
+(()=>{var e,t,r={163:(e,t,r)=>{"use strict";r.d(t,{j:()=>E});var n=r(384),i=r(1741);var s=r(2555);r(860).K7.genericEvents;const a="experimental.resources",o="register",c=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=r(2614),u=r(944),l=r(8122);const f="[data-nr-mask]",g=e=>(0,l.a)(e,(()=>{const e={feature_flags:[],experimental:{allow_registered_children:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{get allow_registered_children(){return e.feature_flags.includes(o)||e.experimental.allow_registered_children},set allow_registered_children(t){e.experimental.allow_registered_children=t},duplicate_registered_data:!1},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(a)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:d.wk,inactiveMs:d.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){c(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,u.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){c(t)?e.block_selector+=",".concat(t):""!==t&&(0,u.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,u.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var p=r(6154),h=r(9324);let m=0;const v={buildEnv:h.F3,distMethod:h.Xs,version:h.xv,originTime:p.WN},b={consented:!1},y={appMetadata:{},get consented(){return this.session?.state?.consent||b.consented},set consented(e){b.consented=e},customTransaction:void 0,denyList:void 0,disabled:!1,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++m}},_=e=>{const t=(0,l.a)(e,y),r=Object.keys(v).reduce((e,t)=>(e[t]={value:v[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)};var w=r(5701);const x=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};var k=r(7836),R=r(3241);const A={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},S=e=>(0,l.a)(e,A),T=new Set;function E(e,t={},r,a){let{init:o,info:c,loader_config:d,runtime:u={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();o=e.init,c=e.info,d=e.loader_config}e.init=g(o||{}),e.loader_config=S(d||{}),c.jsAttributes??={},p.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,s.D)(c);const f=e.init,h=[c.beacon,c.errorBeacon];T.has(e.agentIdentifier)||(f.proxy.assets&&(x(f.proxy.assets),h.push(f.proxy.assets)),f.proxy.beacon&&h.push(f.proxy.beacon),e.beacons=[...h],function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach(r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let s=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return s?s(...t):n})})}(e),(0,n.US)("activatedFeatures",w.B)),u.denyList=[...f.ajax.deny_list||[],...f.ajax.block_internal?h:[]],u.ptid=e.agentIdentifier,u.loaderType=r,e.runtime=_(u),T.has(e.agentIdentifier)||(e.ee=k.ee.get(e.agentIdentifier),e.exposed=l,(0,R.W)({agentIdentifier:e.agentIdentifier,drained:!!w.B?.[e.agentIdentifier],type:"lifecycle",name:"initialize",feature:void 0,data:e.config})),T.add(e.agentIdentifier)}},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>o,US:()=>l,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>f});var n=r(6154),i=r(1863),s=r(944),a=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,a.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(e,t){c()[e]=t}function f(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>c,P3:()=>d,XX:()=>i,Yy:()=>o,df:()=>s,qY:()=>n,v4:()=>a});const n="events",i="jserrors",s="browser/blobs",a="rum",o="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},d={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.softNav]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.sessionReplay]:8,[c.logging]:9,[c.genericEvents]:10},u={[c.pageViewEvent]:a,[c.pageViewTiming]:n,[c.ajax]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:s,[c.sessionReplay]:s,[c.logging]:o,[c.genericEvents]:"ins"}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({agentIdentifier:null,drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>d,Ze:()=>f,x3:()=>u});var n=r(3241),i=r(7836),s=r(3606),a=r(860),o=r(2646);const c={};function d(e,t){const r={staged:!1,priority:a.P3[t]||0};l(e),c[e].get(t)||c[e].set(t,r)}function u(e,t){e&&c[e]&&(c[e].get(t)&&c[e].delete(t),p(e,t,!1),c[e].size&&g(e))}function l(e){if(!e)throw new Error("agentIdentifier required");c[e]||(c[e]=new Map)}function f(e="",t="feature",r=!1){if(l(e),!e||!c[e].get(t)||r)return p(e,t);c[e].get(t).staged=!0,g(e)}function g(e){const t=Array.from(c[e]);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{c[e].delete(t),p(e,t)}))}function p(e,t,r=!0){const a=e?i.ee.get(e):i.ee,c=s.i.handlers;if(!a.aborted&&a.backlog&&c){if((0,n.W)({agentIdentifier:e,type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=c[t];if(r){for(let t=0;e&&t<e.length;++t)h(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof o.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete c[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function h(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},1738:(e,t,r)=>{"use strict";r.d(t,{U:()=>g,Y:()=>f});var n=r(3241),i=r(9908),s=r(1863),a=r(944),o=r(5701),c=r(3969),d=r(8362),u=r(860),l=r(4261);function f(e,t,r,s){const f=s||r;!f||f[e]&&f[e]!==d.d.prototype[e]||(f[e]=function(){(0,i.p)(c.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({agentIdentifier:r.agentIdentifier,drained:!!o.B?.[r.agentIdentifier],type:"data",name:"api",feature:l.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,a.R)(23,e)}})}function g(e,t,r,n,a){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(a||null===r)&&(0,i.p)(l.Pl+n,[(0,s.t)(),t,r],void 0,"session",e.ee)}},1741:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(4261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},1910:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>o,f:()=>a});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const o=e=>(0,i.a)(e,s)},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>a,H3:()=>n,g:()=>d,iL:()=>c,tS:()=>o,uh:()=>i,wk:()=>s});const n="NRBA",i="SESSION",s=144e5,a=18e5,o={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},d={OFF:0,FULL:1,ERROR:2}},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},2843:(e,t,r)=>{"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(6154);const i="newrelic";function s(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(9908);s.on=a;var i=s.handlers={};function s(e,t,r,s){a(s||n.d,i,e,t,r)}function a(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var a=t[s]=t[s]||{};(a[r]=a[r]||[]).push([e,i])}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>o,rs:()=>i,xV:()=>a,z_:()=>s});const n=r(860).K7.metrics,i="sm",s="cm",a="storeSupportabilityMetrics",o="storeEventMetrics"},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(7836),i=r(1687);class s{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},4261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>d,BL:()=>o,CH:()=>g,Dl:()=>_,Fw:()=>y,PA:()=>m,Pl:()=>n,Pv:()=>R,Tb:()=>l,U2:()=>s,V1:()=>k,Wb:()=>x,bt:()=>b,cD:()=>v,d3:()=>w,dT:()=>c,eY:()=>p,fF:()=>f,hG:()=>i,k6:()=>a,nb:()=>h,o5:()=>u});const n="api-",i="addPageAction",s="addToTrace",a="addRelease",o="finished",c="interaction",d="log",u="noticeError",l="pauseReplay",f="recordCustomEvent",g="recordReplay",p="register",h="setApplicationVersion",m="setCurrentRouteName",v="setCustomAttribute",b="setErrorHandler",y="setPageViewName",_="setUserId",w="start",x="wrapLogger",k="measure",R="consent"},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>a,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(s())return e();const r=(0,i.J)(e),a=setInterval(()=>{s()&&(clearInterval(a),r())},500);(0,n.sp)("load",r,t)}function o(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},5701:(e,t,r)=>{"use strict";r.d(t,{B:()=>s,t:()=>a});var n=r(3241);const i=new Set,s={};function a(e,t){const r=t.agentIdentifier;s[r]??={},e&&"object"==typeof e&&(i.has(r)||(t.ee.emit("rumresp",[e]),s[r]=e,i.add(r),(0,n.W)({agentIdentifier:r,loaded:!0,drained:!0,type:"lifecycle",name:"load",feature:void 0,data:e})))}},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>c,RI:()=>i,WN:()=>u,bv:()=>s,eN:()=>l,gm:()=>a,mw:()=>o,sb:()=>d});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),c=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),d=c&&"undefined"==typeof SharedWorker,u=((()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)()),l=()=>"undefined"!=typeof PerformanceNavigationTiming&&a?.performance?.getEntriesByType("navigation")?.[0]?.responseStart},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},7699:(e,t,r)=>{"use strict";r.d(t,{It:()=>s,KC:()=>o,No:()=>i,qh:()=>a});var n=r(860);const i=16e3,s=1e6,a="SESSION_ERROR",o={[n.K7.logging]:!0,[n.K7.genericEvents]:!1,[n.K7.jserrors]:!1,[n.K7.ajax]:!1}},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>o,ee:()=>c});var n=r(384),i=r(8990),s=r(2646),a=r(5607);const o="nr@context:".concat(a.W),c=function e(t,r){var n={},a={},u={},l=!1;try{l=16===r.length&&d.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var o=g(n);h(e).forEach(e=>{e.apply(o,r)});var d=v()[a[e]];d&&d.push([f,e,r,o]);return o},get:m,listeners:h,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{a[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[a[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,o,()=>new s.y(o)):new s.y(o)}function p(e,t){n[e]=h(e).concat(t)}function h(e){return n[e]||[]}function m(t){return u[t]=u[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),d=(0,n.Zm)();d.ee||(d.ee=c)},8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let a in s)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){r[a]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},8362:(e,t,r)=>{"use strict";r.d(t,{d:()=>s});var n=r(9566),i=r(1741);class s extends i.W{agentIdentifier=(0,n.LA)(16)}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},9324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>s,xv:()=>n});const n="1.310.1",i="PROD",s="CDN"},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>o,bz:()=>a});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function s(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?s(t,r++).toString(16):"y"===e?(3&s()|8).toString(16):e).join("")}function o(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var o=0;o<e;o++)a.push(s(r,i++).toString(16));return a.join("")}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var s=n[e]={exports:{}};return r[e](s,s.exports,i),s.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>"nr-rum-1.310.1.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.310.1.PROD:",i.l=(r,n,s,a)=>{if(e[r])e[r].push(n);else{var o,c;if(void 0!==s)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+s){o=l;break}}if(!o){c=!0;var f={296:"sha512-8LEsRObgfHgVhp/OH+e1LIJ8trYoEGGugVcM4cNSUs2rZ3CNt/VHMq+3wUpYKaA5/dW4oR9cdBp7CsljXO+9fA=="};(o=document.createElement("script")).charset="utf-8",i.nc&&o.setAttribute("nonce",i.nc),o.setAttribute("data-webpack",t+s),o.src=r,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),f[a]&&(o.integrity=f[a])}e[r]=[n];var g=(t,n)=>{o.onerror=o.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],o.parentNode&&o.parentNode.removeChild(o),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=g.bind(null,o.onerror),o.onload=g.bind(null,o.onload),c&&document.head.appendChild(o)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={374:0,840:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var s=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=s);var a=i.p+i.u(t),o=new Error;i.l(a,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var s=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;o.message="Loading chunk "+t+" failed: ("+s+": "+a+")",o.name="ChunkLoadError",o.type=s,o.request=a,n[1](o)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,s,[a,o,c]=r,d=0;if(a.some(t=>0!==e[t])){for(n in o)i.o(o,n)&&(i.m[n]=o[n]);if(c)c(i)}for(t&&t(r);d<a.length;d++)s=a[d],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0},r=self["webpackChunk:NRBA-1.310.1.PROD"]=self["webpackChunk:NRBA-1.310.1.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(8362),t=i(860);const r=Object.values(t.K7);var n=i(163);var s=i(9908),a=i(1863),o=i(4261),c=i(1738);var d=i(1687),u=i(4234),l=i(5289),f=i(6154),g=i(944),p=i(384);const h=e=>f.RI&&!0===e?.privacy.cookies_enabled;function m(e){return!!(0,p.dV)().o.MO&&h(e)&&!0===e?.session_trace.enabled}var v=i(6389),b=i(7699);class y extends u.W{constructor(e,t){super(e.agentIdentifier,t),this.agentRef=e,this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,v.J)(()=>{(0,d.Ak)(e.agentIdentifier,this.featureName),t()}))}):(0,d.Ak)(e.agentIdentifier,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{let n;await this.deferred;try{if(h(e.init)){const{setupAgentSession:t}=await i.e(296).then(i.bind(i,3305));n=t(e)}}catch(e){(0,g.R)(20,e),this.ee.emit("internal-error",[e]),(0,s.p)(b.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#t(this.featureName,n,e.init))return(0,d.Ze)(this.agentIdentifier,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,g.R)(34,e),this.abortHandler?.(),(0,d.Ze)(this.agentIdentifier,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};f.RI?(0,l.GG)(()=>n(),!0):n()}#t(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return m(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}}var _=i(6630),w=i(2614),x=i(3241);class k extends y{static featureName=_.T;constructor(e){var t;super(e,_.T),this.setupInspectionEvents(e.agentIdentifier),t=e,(0,c.Y)(o.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,s.p)(o.Pl+o.Fw,[(0,a.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(296).then(i.bind(i,3943)))}setupInspectionEvents(e){const t=(t,r)=>{t&&(0,x.W)({agentIdentifier:e,timeStamp:t.timeStamp,loaded:"complete"===t.target.readyState,type:"window",name:r,data:t.target.location+""})};(0,l.sB)(e=>{t(e,"DOMContentLoaded")}),(0,l.GG)(e=>{t(e,"load")}),(0,l.Qr)(e=>{t(e,"navigate")}),this.ee.on(w.tS.UPDATE,(t,r)=>{(0,x.W)({agentIdentifier:e,type:"lifecycle",name:"session",data:r})})}}class R extends e.d{constructor(e){var t;(super(),f.gm)?(this.features={},(0,p.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(k),(0,n.j)(this,e,e.loaderType||"agent"),t=this,(0,c.Y)(o.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,c.U)(t,e,r,o.cD,n);(0,g.R)(40,typeof r)}else(0,g.R)(39,typeof e)},t),function(e){(0,c.Y)(o.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,g.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,s.p)(o.Pl+"setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,c.U)(e,"enduser.id",t,o.Dl,!0)},e)}(this),function(e){(0,c.Y)(o.nb,function(t){if("string"==typeof t||null===t)return(0,c.U)(e,"application.version",t,o.nb,!1);(0,g.R)(42,typeof t)},e)}(this),function(e){(0,c.Y)(o.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,c.Y)(o.Pv,function(t=!0){if("boolean"==typeof t){if((0,s.p)(o.Pl+o.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,g.R)(65,typeof t)},e)}(this),this.run()):(0,g.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return r.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),n=[...this.desiredFeatures];n.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),n.forEach(r=>{if(!e[r.featureName]&&r.featureName!==t.K7.pageViewEvent)return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,g.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,g.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,p.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var A=i(2843),S=i(782);class T extends y{static featureName=S.T;constructor(e){super(e,S.T),f.RI&&((0,A.u)(()=>(0,s.p)("docHidden",[(0,a.t)()],void 0,S.T,this.ee),!0),(0,A.G)(()=>(0,s.p)("winPagehide",[(0,a.t)()],void 0,S.T,this.ee)),this.importAggregator(e,()=>i.e(296).then(i.bind(i,2117))))}}var E=i(3969);class j extends y{static featureName=E.TZ;constructor(e){super(e,E.TZ),f.RI&&document.addEventListener("securitypolicyviolation",e=>{(0,s.p)(E.xV,["Generic/CSPViolation/Detected"],void 0,this.featureName,this.ee)}),this.importAggregator(e,()=>i.e(296).then(i.bind(i,9623)))}}new R({features:[k,T,j],loaderType:"lite"})})()})();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:site_name" content="Multilogin">
+    
+    
+        <title>How to get profile, folder, and workspace IDs in DevTools - Multilogin</title>
+        <meta name="description" content="Learn how to find profile, folder &amp; workspace IDs in Multilogin X using Developer Tools – essential for API requests and automation.">
+        <meta property="og:title" content="How to get profile, folder, and workspace IDs in DevTools - Multilogin">
+        <meta property="og:description" content="Learn how to find profile, folder &amp; workspace IDs in Multilogin X using Developer Tools – essential for API requests and automation. ">
+        
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="How to get profile, folder, and workspace IDs in DevTools">
+        <meta name="twitter:description" content="Profile, folder, and workspace IDs are required to run the majority of API requests with Multilogin. Let&#39;s explore how to get them using Developer Tools. H">
+        <meta name="twitter:image:src" content="https://multiloginx.helpjuice.comhttps://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/direct/1748964652968/Copy%20profile%20ID.png">
+    
+    
+    
+    <meta property="og:image" content="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/4025196/1714492944256-logo-footer-new.png">
+    <meta property="og:image:alt" content="multilogin">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="300">
+    
+    <link rel="icon" type="image/png" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/direct/1733783586928/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/direct/1733783586924/favicon.svg">
+    <link rel="shortcut icon" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/direct/1733783586919/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/direct/1733783586910/apple-touch-icon.png">
+    <link rel="manifest" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/16296/direct/1733783586935/web-app-manifest-192x192.png">
+
+    <link rel="stylesheet" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/all.min.css">
+    <link rel="stylesheet" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/flags.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <!-- Preload & Load CSS Asynchronously -->
+    <link rel="stylesheet" as="style" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/css2" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Preconnect for faster DNS & TLS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    
+    <!-- reload & non-blocking load of stylesheet -->
+    <link rel="stylesheet" as="style" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/css2" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+    
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <link rel="stylesheet" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/all(1).min.css">
+    <link rel="stylesheet" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/feedbacks.css">
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/feedbacks.js.download" defer=""></script>
+    <link rel="stylesheet" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/knowledgebase.css">
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/knowledgebase.js.download" defer=""></script>
+    
+    <link href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/main_css_16296-edc9a7dda776311fc23b6af5eea7460a5e0014ffcc1a40694a42afd811b937d3.css" media="all" rel="stylesheet">
+    
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/jquery-3.3.1.min.js.download"></script>
+
+    
+    
+    <link rel="stylesheet" href="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/default.min.css">
+
+    <script>
+        // Select the button element
+        const buttonElement = document.getElementById('close-feedback-form');
+    
+        // The SVG you want to use as a replacement
+        const svgCode = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>`;
+    
+        // Replace the content of the button with the SVG
+        if (buttonElement) {
+            buttonElement.innerHTML = svgCode;
+        }
+    </script>
+
+    <script>var enabledAISearch = undefined;</script>
+    <script>const skipHelpjuiceToolTip = true;</script>
+    
+    <meta name="user-logged-in" content="false">
+    
+<meta name="question-id" content="2224889"><meta name="category-id" content="1023463"><meta name="flow-id" content=""><meta name="recaptcha-site-key" content="6LeuRjYpAAAAAAPXNDHy3MHuFvolK8GVUAap-qp8"><meta name="require-contact-captcha" content="false"><meta name="current-language" content="en_US"><meta name="knowledge-base-url" content="https://multiloginx.helpjuice.com/?kb_language=en_US"><meta name="current-user-id" content=""><meta name="ignore-users-analytics" content="false"><meta name="reading-timeout" content="10000"><meta name="account-subdirectory-prefix" content="help"><meta name="current-account-id" content="16296"><meta name="account-subdomain" content="multiloginx"><meta name="helpjuice-knowledge-base-url" content="https://multiloginx.helpjuice.com/"><meta name="swifty-voice-call-enabled" content="true"><meta name="voice-connector-enabled" content="true"><script async="" type="text/javascript" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/tracking.js.download"></script></head>
+
+
+
+<body class="scientia-theme question_page subcategories-page">
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NB64HVB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!--START_COMPONENT_HEADER_NAV_BAR-->
+    <header class="nav-bar innerpage-nav-bar" data-helpjuice-component="Header Nav Bar" data-helpjuice-element="Container" data-helpjuice-attributes="visibility,background">
+        <div class="outer-container">
+            <div class="container">
+                <nav class="frame">
+                    <div class="div">
+                        <a href="https://multilogin.com/help/en_US" class="group" aria-label="Home" data-helpjuice-element="Header Logo" data-helpjuice-attributes="link,visibility">
+                            
+                                <svg width="320" height="34" viewBox="0 0 320 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M298.894 23.1846C297.86 23.1846 296.971 22.9661 296.226 22.5291C295.487 22.0921 294.921 21.5104 294.527 20.784C294.133 20.0516 293.936 19.2391 293.936 18.3465V17.9864C293.936 16.9831 294.124 16.0937 294.499 15.3181C294.881 14.5364 295.42 13.927 296.115 13.49C296.817 13.0468 297.645 12.8252 298.599 12.8252C299.565 12.8252 300.375 13.0314 301.027 13.4438C301.68 13.8501 302.172 14.4225 302.504 15.1611C302.837 15.8936 303.003 16.7523 303.003 17.7372V18.882H295.09V17.0447H300.362V16.8323C300.356 16.4815 300.292 16.1675 300.168 15.8906C300.045 15.6074 299.855 15.3858 299.596 15.2258C299.337 15.0657 298.999 14.9857 298.58 14.9857C298.119 14.9857 297.743 15.1181 297.454 15.3827C297.165 15.6413 296.952 15.9952 296.817 16.4445C296.681 16.8939 296.614 17.4078 296.614 17.9864V18.3465C296.614 18.8697 296.709 19.3314 296.9 19.7315C297.097 20.1316 297.38 20.4455 297.749 20.6733C298.119 20.901 298.559 21.0149 299.07 21.0149C299.556 21.0149 300.005 20.9256 300.418 20.7471C300.83 20.5625 301.184 20.2793 301.48 19.8977L302.791 21.375C302.477 21.8305 301.993 22.2459 301.341 22.6214C300.695 22.9969 299.879 23.1846 298.894 23.1846Z" fill="black"></path>
+<path d="M288.369 23.1846C287.433 23.1846 286.642 23.0184 285.996 22.686C285.356 22.3475 284.869 21.9197 284.537 21.4027C284.205 20.8856 284.038 20.3532 284.038 19.8054H286.596C286.614 20.1562 286.707 20.4394 286.873 20.6548C287.045 20.8641 287.267 21.021 287.538 21.1257C287.808 21.2242 288.104 21.2734 288.424 21.2734C288.763 21.2734 289.043 21.2303 289.264 21.1441C289.492 21.058 289.664 20.9349 289.781 20.7748C289.898 20.6148 289.957 20.4332 289.957 20.2301C289.957 20.0393 289.901 19.8731 289.79 19.7315C289.686 19.5838 289.486 19.4483 289.19 19.3252C288.901 19.2021 288.476 19.0821 287.916 18.9651C287.239 18.8174 286.63 18.6174 286.088 18.365C285.553 18.1126 285.131 17.7895 284.823 17.3955C284.522 16.9954 284.371 16.5061 284.371 15.9275C284.371 15.3735 284.528 14.8626 284.842 14.3948C285.162 13.9208 285.617 13.5423 286.208 13.2591C286.805 12.9698 287.519 12.8252 288.35 12.8252C289.218 12.8252 289.966 12.9637 290.594 13.2407C291.222 13.5177 291.702 13.8993 292.034 14.3856C292.373 14.8718 292.542 15.4258 292.542 16.0475H289.855C289.855 15.6659 289.732 15.352 289.486 15.1057C289.246 14.8534 288.867 14.7272 288.35 14.7272C288.055 14.7272 287.802 14.7764 287.593 14.8749C287.384 14.9673 287.224 15.0934 287.113 15.2535C287.002 15.4135 286.947 15.5982 286.947 15.8075C286.947 15.9983 287.005 16.1675 287.122 16.3153C287.239 16.4568 287.43 16.583 287.695 16.6938C287.965 16.7985 288.332 16.8939 288.793 16.9801C289.52 17.1216 290.166 17.3124 290.732 17.5525C291.299 17.7864 291.745 18.1096 292.071 18.522C292.403 18.9282 292.57 19.4637 292.57 20.1285C292.57 20.7133 292.397 21.2365 292.053 21.6981C291.708 22.1598 291.222 22.5229 290.594 22.7876C289.966 23.0523 289.224 23.1846 288.369 23.1846Z" fill="black"></path>
+<path d="M279.8 16.3245C279.8 15.8629 279.68 15.4966 279.44 15.2258C279.206 14.9488 278.837 14.8103 278.332 14.8103C278.043 14.8103 277.791 14.8595 277.575 14.958C277.366 15.0504 277.203 15.1858 277.086 15.3643C276.975 15.5428 276.92 15.7582 276.92 16.0106H274.233C274.233 15.4258 274.405 14.8934 274.75 14.4133C275.101 13.9332 275.593 13.5484 276.227 13.2591C276.867 12.9698 277.618 12.8252 278.48 12.8252C279.25 12.8252 279.936 12.9545 280.539 13.213C281.148 13.4715 281.625 13.8624 281.97 14.3856C282.321 14.9088 282.496 15.5612 282.496 16.343V20.5625C282.496 21.1287 282.53 21.5873 282.598 21.9382C282.666 22.2829 282.764 22.5845 282.893 22.843V23H280.179C280.056 22.723 279.96 22.3783 279.893 21.9659C279.831 21.5473 279.8 21.1257 279.8 20.701V16.3245ZM280.151 18.4573H278.72C278.012 18.4573 277.498 18.6051 277.178 18.9005C276.858 19.1898 276.698 19.553 276.698 19.99C276.698 20.3162 276.812 20.5902 277.04 20.8117C277.274 21.0272 277.591 21.1349 277.991 21.1349C278.385 21.1349 278.726 21.058 279.016 20.9041C279.311 20.744 279.539 20.5532 279.699 20.3316C279.859 20.1039 279.936 19.8946 279.93 19.7038L280.65 20.8671C280.564 21.1195 280.434 21.3811 280.262 21.652C280.096 21.9166 279.884 22.1659 279.625 22.3998C279.366 22.6276 279.053 22.8153 278.683 22.963C278.32 23.1108 277.895 23.1846 277.409 23.1846C276.769 23.1846 276.19 23.0584 275.673 22.8061C275.162 22.5476 274.756 22.1936 274.454 21.7443C274.153 21.2888 274.002 20.7687 274.002 20.1839C274.002 19.1375 274.39 18.3281 275.165 17.7556C275.947 17.1832 277.098 16.897 278.619 16.897H280.151V18.4573Z" fill="black"></path>
+<path d="M268.869 23.1847C268.05 23.1847 267.376 22.9631 266.846 22.5199C266.323 22.0706 265.914 21.4704 265.618 20.7195C265.329 19.9624 265.123 19.1191 265 18.1896V17.8111C265.123 16.857 265.329 16.0045 265.618 15.2535C265.908 14.5026 266.314 13.9117 266.837 13.4808C267.367 13.0438 268.038 12.8252 268.85 12.8252C269.73 12.8252 270.457 13.0438 271.029 13.4808C271.608 13.9178 272.039 14.518 272.322 15.2812C272.611 16.0383 272.756 16.9124 272.756 17.9034V18.0973C272.756 19.0883 272.611 19.9685 272.322 20.7379C272.039 21.5012 271.611 22.1013 271.038 22.5384C270.466 22.9692 269.743 23.1847 268.869 23.1847ZM263.744 23V8.81812H266.431V20.6825L266.163 23H263.744ZM268.195 21.0149C268.693 21.0149 269.078 20.8887 269.349 20.6364C269.619 20.384 269.807 20.0393 269.912 19.6023C270.016 19.1591 270.069 18.6574 270.069 18.0973V17.9034C270.069 17.374 270.013 16.8908 269.903 16.4538C269.798 16.0168 269.61 15.6659 269.339 15.4013C269.069 15.1366 268.681 15.0042 268.176 15.0042C267.819 15.0042 267.514 15.0627 267.262 15.1797C267.01 15.2966 266.803 15.4628 266.643 15.6782C266.483 15.8937 266.36 16.1522 266.274 16.4538C266.194 16.7554 266.145 17.0909 266.126 17.4602V18.5497C266.151 19.036 266.234 19.4638 266.376 19.8331C266.517 20.2024 266.736 20.4917 267.031 20.701C267.327 20.9103 267.714 21.0149 268.195 21.0149Z" fill="black"></path>
+<path d="M253.412 23.1846C252.378 23.1846 251.489 22.9661 250.744 22.5291C250.005 22.0921 249.439 21.5104 249.045 20.784C248.651 20.0516 248.454 19.2391 248.454 18.3465V17.9864C248.454 16.9831 248.642 16.0937 249.018 15.3181C249.399 14.5364 249.938 13.927 250.633 13.49C251.335 13.0468 252.163 12.8252 253.117 12.8252C254.083 12.8252 254.893 13.0314 255.545 13.4438C256.198 13.8501 256.69 14.4225 257.023 15.1611C257.355 15.8936 257.521 16.7523 257.521 17.7372V18.882H249.608V17.0447H254.881V16.8323C254.874 16.4815 254.81 16.1675 254.687 15.8906C254.564 15.6074 254.373 15.3858 254.114 15.2258C253.856 15.0657 253.517 14.9857 253.099 14.9857C252.637 14.9857 252.261 15.1181 251.972 15.3827C251.683 15.6413 251.47 15.9952 251.335 16.4445C251.2 16.8939 251.132 17.4078 251.132 17.9864V18.3465C251.132 18.8697 251.227 19.3314 251.418 19.7315C251.615 20.1316 251.898 20.4455 252.268 20.6733C252.637 20.901 253.077 21.0149 253.588 21.0149C254.074 21.0149 254.524 20.9256 254.936 20.7471C255.348 20.5625 255.702 20.2793 255.998 19.8977L257.309 21.375C256.995 21.8305 256.512 22.2459 255.859 22.6214C255.213 22.9969 254.397 23.1846 253.412 23.1846Z" fill="black"></path>
+<path d="M241.945 26.9332C241.545 26.9332 241.108 26.8778 240.634 26.767C240.166 26.6562 239.717 26.4839 239.286 26.25C238.861 26.0222 238.507 25.7299 238.224 25.3729L239.415 23.7386C239.723 24.0833 240.08 24.3541 240.486 24.5511C240.899 24.7481 241.345 24.8466 241.825 24.8466C242.533 24.8466 243.084 24.6558 243.478 24.2741C243.872 23.8987 244.069 23.3631 244.069 22.6676V15.3273L244.318 13.0099H246.765V22.6584C246.765 23.5693 246.562 24.3418 246.155 24.9758C245.749 25.616 245.183 26.1023 244.456 26.4347C243.736 26.767 242.899 26.9332 241.945 26.9332ZM241.65 23.1846C240.825 23.1846 240.108 22.9661 239.498 22.5291C238.895 22.0859 238.427 21.4827 238.095 20.7194C237.769 19.9562 237.606 19.0913 237.606 18.1249V17.9311C237.606 16.9154 237.769 16.026 238.095 15.2627C238.427 14.4933 238.895 13.8962 239.498 13.4715C240.108 13.0406 240.831 12.8252 241.668 12.8252C242.333 12.8252 242.89 12.9514 243.339 13.2037C243.795 13.4561 244.167 13.81 244.456 14.2655C244.746 14.721 244.974 15.2566 245.14 15.8721C245.306 16.4876 245.435 17.1586 245.528 17.8849V18.245C245.404 19.1683 245.195 20.0023 244.9 20.7471C244.61 21.4919 244.201 22.0859 243.672 22.5291C243.142 22.9661 242.468 23.1846 241.65 23.1846ZM242.333 21.0056C242.813 21.0056 243.204 20.9041 243.505 20.701C243.807 20.4978 244.035 20.2147 244.189 19.8515C244.343 19.4884 244.435 19.0729 244.466 18.6051V17.5248C244.447 17.1309 244.392 16.78 244.3 16.4722C244.213 16.1583 244.084 15.8936 243.912 15.6782C243.739 15.4628 243.524 15.2966 243.265 15.1796C243.013 15.0627 242.708 15.0042 242.351 15.0042C241.89 15.0042 241.505 15.1334 241.197 15.392C240.896 15.6505 240.671 16.0014 240.523 16.4445C240.375 16.8816 240.302 17.3771 240.302 17.9311V18.1249C240.302 18.6605 240.372 19.1467 240.514 19.5838C240.662 20.0146 240.883 20.3593 241.179 20.6179C241.48 20.8764 241.865 21.0056 242.333 21.0056Z" fill="black"></path>
+<path d="M230.819 23.1847C229.995 23.1847 229.29 22.9662 228.705 22.5291C228.126 22.086 227.683 21.4827 227.375 20.7195C227.068 19.9562 226.914 19.0914 226.914 18.125V17.9311C226.914 16.9155 227.068 16.026 227.375 15.2628C227.683 14.4933 228.129 13.8963 228.714 13.4716C229.299 13.0407 230.007 12.8252 230.838 12.8252C231.626 12.8252 232.284 13.0468 232.814 13.49C233.343 13.927 233.758 14.5272 234.06 15.2905C234.362 16.0476 234.571 16.9093 234.688 17.8757V18.245C234.571 19.1683 234.359 20.0024 234.051 20.7472C233.749 21.492 233.334 22.086 232.804 22.5291C232.275 22.9662 231.613 23.1847 230.819 23.1847ZM231.503 21.0057C231.952 21.0057 232.321 20.9041 232.611 20.701C232.906 20.4979 233.131 20.2147 233.285 19.8516C233.445 19.4884 233.54 19.0729 233.571 18.6051V17.5248C233.552 17.1309 233.497 16.78 233.405 16.4723C233.312 16.1584 233.183 15.8937 233.017 15.6782C232.851 15.4628 232.641 15.2966 232.389 15.1797C232.143 15.0627 231.853 15.0042 231.521 15.0042C231.059 15.0042 230.687 15.1335 230.404 15.392C230.121 15.6505 229.914 16.0014 229.785 16.4446C229.662 16.8816 229.601 17.3771 229.601 17.9311V18.125C229.601 18.6605 229.662 19.1468 229.785 19.5838C229.908 20.0147 230.108 20.3594 230.385 20.6179C230.662 20.8764 231.035 21.0057 231.503 21.0057ZM233.497 23L233.229 20.8026V8.81812H235.925V23H233.497Z" fill="black"></path>
+<path d="M221.706 23.1846C220.672 23.1846 219.783 22.9661 219.038 22.5291C218.299 22.0921 217.733 21.5104 217.339 20.784C216.945 20.0516 216.748 19.2391 216.748 18.3465V17.9864C216.748 16.9831 216.936 16.0937 217.311 15.3181C217.693 14.5364 218.232 13.927 218.927 13.49C219.629 13.0468 220.457 12.8252 221.411 12.8252C222.377 12.8252 223.187 13.0314 223.839 13.4438C224.492 13.8501 224.984 14.4225 225.316 15.1611C225.649 15.8936 225.815 16.7523 225.815 17.7372V18.882H217.902V17.0447H223.174V16.8323C223.168 16.4815 223.104 16.1675 222.98 15.8906C222.857 15.6074 222.667 15.3858 222.408 15.2258C222.149 15.0657 221.811 14.9857 221.392 14.9857C220.931 14.9857 220.555 15.1181 220.266 15.3827C219.977 15.6413 219.764 15.9952 219.629 16.4445C219.493 16.8939 219.426 17.4078 219.426 17.9864V18.3465C219.426 18.8697 219.521 19.3314 219.712 19.7315C219.909 20.1316 220.192 20.4455 220.561 20.6733C220.931 20.901 221.371 21.0149 221.882 21.0149C222.368 21.0149 222.817 20.9256 223.23 20.7471C223.642 20.5625 223.996 20.2793 224.292 19.8977L225.603 21.375C225.289 21.8305 224.806 22.2459 224.153 22.6214C223.507 22.9969 222.691 23.1846 221.706 23.1846Z" fill="black"></path>
+<path d="M214.911 23H212.224V8.81812H214.911V23Z" fill="black"></path>
+<path d="M203.102 13.0099H204.801L204.293 16.0014L202.188 23H200.757L200.997 20.3778L203.102 13.0099ZM201.514 20.3686L201.615 23H199.953L197.396 13.0099H199.999L201.514 20.3686ZM208.161 13.0099H210.747L208.208 23H206.546L206.675 20.2393L208.161 13.0099ZM207.146 20.3224L207.404 23H205.964L203.85 16.0106L203.36 13.0099H205.05L207.146 20.3224Z" fill="black"></path>
+<path d="M187.046 17.9126C187.046 16.94 187.23 16.0721 187.6 15.3089C187.969 14.5395 188.504 13.9332 189.206 13.49C189.914 13.0468 190.77 12.8252 191.773 12.8252C192.789 12.8252 193.647 13.0468 194.349 13.49C195.057 13.9332 195.592 14.5395 195.956 15.3089C196.325 16.0721 196.509 16.94 196.509 17.9126V18.1065C196.509 19.0729 196.325 19.9408 195.956 20.7102C195.592 21.4796 195.06 22.0859 194.358 22.5291C193.656 22.9661 192.801 23.1846 191.791 23.1846C190.782 23.1846 189.923 22.9661 189.215 22.5291C188.508 22.0859 187.969 21.4796 187.6 20.7102C187.23 19.9408 187.046 19.0729 187.046 18.1065V17.9126ZM189.742 18.1065C189.742 18.642 189.806 19.1313 189.936 19.5745C190.071 20.0177 190.286 20.3716 190.582 20.6363C190.884 20.8948 191.287 21.0241 191.791 21.0241C192.284 21.0241 192.678 20.8948 192.973 20.6363C193.275 20.3716 193.493 20.0177 193.629 19.5745C193.764 19.1313 193.832 18.642 193.832 18.1065V17.9126C193.832 17.3832 193.764 16.897 193.629 16.4538C193.493 16.0106 193.275 15.6567 192.973 15.392C192.678 15.1211 192.278 14.9857 191.773 14.9857C191.281 14.9857 190.884 15.1211 190.582 15.392C190.286 15.6567 190.071 16.0106 189.936 16.4538C189.806 16.897 189.742 17.3832 189.742 17.9126V18.1065Z" fill="black"></path>
+<path d="M179.493 23H176.806V13.0099H179.327L179.493 15.1427V23ZM178.348 17.691C178.348 16.6938 178.511 15.8321 178.837 15.1057C179.17 14.3733 179.631 13.81 180.222 13.4161C180.813 13.0222 181.5 12.8252 182.281 12.8252C182.915 12.8252 183.466 12.9483 183.934 13.1945C184.408 13.4407 184.777 13.8408 185.042 14.3948C185.313 14.9488 185.448 15.6967 185.448 16.6384V23H182.752V16.6292C182.752 16.2045 182.691 15.8752 182.568 15.6413C182.444 15.4074 182.266 15.2442 182.032 15.1519C181.798 15.0534 181.509 15.0042 181.164 15.0042C180.819 15.0042 180.518 15.0719 180.259 15.2073C180.001 15.3366 179.785 15.5243 179.613 15.7705C179.441 16.0106 179.311 16.2937 179.225 16.62C179.139 16.94 179.096 17.2878 179.096 17.6633L178.348 17.691Z" fill="black"></path>
+<path d="M167.998 23H165.191V9.55676H167.998V23ZM170.712 16.2322L167.61 19.5746L167.102 16.8416L169.198 13.9609L172.605 9.55676H176.031L170.712 16.2322ZM168.93 16.8416L170.98 15.0596L176.169 23H172.854L168.93 16.8416Z" fill="black"></path>
+<mask id="mask0_1114_585" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="154" height="32">
+<path d="M154 0H0V32H154V0Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_1114_585)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.0256 26.5143C20.3482 28.154 21.7418 30.1019 21.7721 31.9304V31.9901H27.417V31.9404C27.4372 30.1516 28.5481 28.5317 31.0424 26.882C31.0525 26.8721 31.0727 26.8621 31.0828 26.8522L31.1635 26.7926C31.1736 26.7826 31.1837 26.7826 31.1938 26.7727L31.2544 26.7329V19.9354C31.0727 20.0348 30.9212 20.1242 30.8101 20.1839L30.6182 20.2932C29.5781 20.8895 28.75 21.3963 27.9725 21.9429L27.8715 22.0124C26.6395 22.887 25.5186 23.8708 24.5895 24.964C23.6605 23.8708 22.5496 22.887 21.3075 22.0124C20.4997 21.446 19.6514 20.9093 18.5608 20.2932L18.3992 20.2037C18.3083 20.1541 18.177 20.0745 18.0155 19.9851L16.2685 19.0112C15.9857 18.8522 15.7433 18.7131 15.5818 18.6236L15.4101 18.5242C14.2892 17.8882 13.35 17.3218 12.4109 16.7056C10.6942 15.5727 9.63383 14.3603 9.05823 13.1081C8.66439 12.2534 8.52302 11.4783 8.52302 10.6634C8.52302 7.85095 10.8456 5.56523 13.7136 5.56523C16.5815 5.56523 18.9041 7.85095 18.9041 10.6634C18.9041 11.4683 18.7628 12.2534 18.3689 13.1081C17.864 14.2013 16.9854 15.2646 15.6323 16.2683C15.8746 16.4075 16.1271 16.5565 16.3896 16.7056L16.5512 16.795L16.6724 16.8646L18.0054 17.61C18.7325 18.0075 19.1162 18.2261 19.3485 18.3553L19.6413 18.5242C20.0149 18.7329 20.3482 18.9317 20.6713 19.1304L20.8026 19.21C21.9942 18.0373 22.893 16.7652 23.509 15.4236C24.2765 13.7739 24.5491 12.2236 24.5491 10.6832C24.539 4.83976 19.7827 0.109328 13.8751 0.00994873H13.7035H13.5217C7.63436 0.109328 2.87803 4.83977 2.87803 10.6634C2.87803 12.2137 3.16079 13.764 3.91816 15.4037C4.9381 17.6 6.68511 19.5975 9.2602 21.2969C10.3407 22.0124 11.4212 22.6584 12.6835 23.3739L12.7239 23.3938C12.8249 23.4435 12.9562 23.523 13.1077 23.6124L14.986 24.6559C15.1879 24.7652 15.3596 24.8646 15.4808 24.9342L15.6727 25.0435C16.6522 25.61 17.3793 26.0572 18.0256 26.5143ZM8.09888 23.0162C7.50308 22.6186 6.94767 22.2112 6.42256 21.7839L6.40236 21.8037C6.30138 21.8733 6.20039 21.9429 6.09941 22.0124C4.50387 23.1454 3.1002 24.4671 2.04997 25.9578C0.73718 27.7963 0 29.8336 0 31.9901H5.64498C5.64498 30.1516 7.03856 28.1739 9.39147 26.5143C9.96708 26.1068 10.6033 25.7093 11.4212 25.2422L11.5929 25.1429L11.4818 25.0832C10.1993 24.3478 9.13902 23.7019 8.09888 23.0162Z" fill="#0540F7"></path>
+<path d="M44.7458 23.0559C44.6145 23.0559 44.5034 23.0063 44.4025 22.9168C44.3015 22.8274 44.251 22.7081 44.251 22.569V9.97768C44.251 9.83855 44.3015 9.71929 44.4025 9.62985C44.5034 9.54041 44.6145 9.49072 44.7458 9.49072H46.5736C46.7756 9.49072 46.9169 9.54041 47.0179 9.64973C47.1189 9.74911 47.1896 9.82861 47.2199 9.8783L50.8452 16.4472L54.5109 9.8783C54.5412 9.82861 54.6018 9.74911 54.7028 9.64973C54.8038 9.55035 54.9451 9.49072 55.1471 9.49072H56.9749C57.1163 9.49072 57.2375 9.54041 57.3284 9.62985C57.4192 9.71929 57.4697 9.83855 57.4697 9.97768V22.569C57.4697 22.7081 57.4192 22.8274 57.3284 22.9168C57.2375 23.0063 57.1163 23.0559 56.9749 23.0559H54.9653C54.8341 23.0559 54.723 23.0063 54.6321 22.9168C54.5412 22.8274 54.4907 22.7081 54.4907 22.569V14.7379L51.9863 19.3491C51.9156 19.4684 51.8348 19.5677 51.7339 19.6572C51.6329 19.7466 51.4915 19.7963 51.3198 19.7963H50.3908C50.2191 19.7963 50.0777 19.7466 49.9767 19.6572C49.8758 19.5677 49.7849 19.4584 49.7243 19.3491L47.2199 14.7379V22.569C47.2199 22.7081 47.1694 22.8274 47.0785 22.9168C46.9876 23.0063 46.8765 23.0559 46.7453 23.0559H44.7458Z" fill="black"></path>
+<path d="M65.3464 23.2447C64.1952 23.2447 63.1753 23.0559 62.3169 22.6684C61.4586 22.2808 60.782 21.6944 60.3073 20.9093C59.8327 20.1143 59.6005 19.1006 59.6005 17.8783V9.96773C59.6005 9.8286 59.651 9.70935 59.7418 9.6199C59.8327 9.53046 59.9539 9.48077 60.0953 9.48077H62.2462C62.3876 9.48077 62.5088 9.53046 62.5997 9.6199C62.6906 9.70935 62.7411 9.8286 62.7411 9.96773V17.8584C62.7411 18.8125 62.9733 19.528 63.4277 19.9951C63.8822 20.4621 64.5285 20.6907 65.3565 20.6907C66.1745 20.6907 66.8107 20.4621 67.2651 19.9951C67.7195 19.528 67.9518 18.8224 67.9518 17.8584V9.96773C67.9518 9.8286 68.0023 9.70935 68.1033 9.6199C68.2043 9.53046 68.3153 9.48077 68.4466 9.48077H70.6178C70.7491 9.48077 70.8601 9.53046 70.951 9.6199C71.0419 9.70935 71.0924 9.8286 71.0924 9.96773V17.8783C71.0924 19.1106 70.8601 20.1143 70.3855 20.9093C69.9109 21.7044 69.2545 22.2907 68.3961 22.6684C67.5176 23.0559 66.5077 23.2447 65.3464 23.2447Z" fill="black"></path>
+<path d="M73.7484 23.0559C73.607 23.0559 73.4858 23.0063 73.3949 22.9168C73.304 22.8274 73.2535 22.7081 73.2535 22.569V9.97768C73.2535 9.83855 73.304 9.71929 73.3949 9.62985C73.4858 9.54041 73.607 9.49072 73.7484 9.49072H75.9296C76.071 9.49072 76.1922 9.54041 76.283 9.62985C76.3739 9.71929 76.4244 9.83855 76.4244 9.97768V20.4622H82.5238C82.6652 20.4622 82.7864 20.5118 82.8773 20.6013C82.9682 20.6907 83.0187 20.81 83.0187 20.9491V22.5789C83.0187 22.7181 82.9682 22.8373 82.8773 22.9267C82.7864 23.0162 82.6652 23.0659 82.5238 23.0659H73.7484V23.0559Z" fill="black"></path>
+<path d="M85.4624 23.0559C85.3211 23.0559 85.1999 23.0063 85.109 22.9168C85.0181 22.8274 84.9676 22.7081 84.9676 22.569V12.1839H81.3827C81.2514 12.1839 81.1403 12.1342 81.0495 12.0448C80.9586 11.9553 80.9081 11.846 80.9081 11.7168V9.97768C80.9081 9.83855 80.9586 9.71929 81.0495 9.62985C81.1403 9.54041 81.2514 9.49072 81.3827 9.49072H91.7032C91.8446 9.49072 91.9658 9.54041 92.0567 9.62985C92.1476 9.71929 92.198 9.83855 92.198 9.97768V11.7168C92.198 11.846 92.1476 11.9553 92.0567 12.0448C91.9658 12.1342 91.8446 12.1839 91.7032 12.1839H88.1385V22.569C88.1385 22.7081 88.088 22.8274 87.9971 22.9168C87.9062 23.0063 87.7851 23.0559 87.6437 23.0559H85.4624Z" fill="black"></path>
+<path d="M94.7125 23.0559C94.5711 23.0559 94.4499 23.0063 94.359 22.9168C94.2681 22.8274 94.2177 22.7081 94.2177 22.569V9.97768C94.2177 9.83855 94.2681 9.71929 94.359 9.62985C94.4499 9.54041 94.5711 9.49072 94.7125 9.49072H96.9341C97.0755 9.49072 97.1967 9.54041 97.2876 9.62985C97.3784 9.71929 97.4289 9.83855 97.4289 9.97768V22.569C97.4289 22.7081 97.3784 22.8274 97.2876 22.9168C97.1967 23.0063 97.0755 23.0559 96.9341 23.0559H94.7125Z" fill="black"></path>
+<path d="M100.145 23.0559C100.004 23.0559 99.8829 23.0063 99.792 22.9168C99.7011 22.8274 99.6506 22.7081 99.6506 22.569V9.97768C99.6506 9.83855 99.7011 9.71929 99.792 9.62985C99.8829 9.54041 100.004 9.49072 100.145 9.49072H102.327C102.468 9.49072 102.589 9.54041 102.68 9.62985C102.771 9.71929 102.822 9.83855 102.822 9.97768V20.4622H108.931C109.072 20.4622 109.194 20.5118 109.284 20.6013C109.375 20.6907 109.426 20.81 109.426 20.9491V22.5789C109.426 22.7181 109.375 22.8373 109.284 22.9267C109.194 23.0162 109.072 23.0659 108.931 23.0659H100.145V23.0559Z" fill="black"></path>
+<path d="M116.474 23.2447C115.283 23.2447 114.253 23.046 113.384 22.6584C112.516 22.2708 111.839 21.6845 111.355 20.9093C110.87 20.1242 110.607 19.1404 110.567 17.9578C110.557 17.4013 110.547 16.8547 110.547 16.2982C110.547 15.7516 110.557 15.195 110.567 14.6187C110.607 13.4559 110.87 12.482 111.365 11.687C111.86 10.8919 112.536 10.2957 113.415 9.89815C114.283 9.50064 115.313 9.30188 116.474 9.30188C117.626 9.30188 118.646 9.50064 119.514 9.89815C120.383 10.2957 121.069 10.8919 121.574 11.687C122.069 12.482 122.332 13.4559 122.362 14.6187C122.392 15.1851 122.402 15.7416 122.402 16.2982C122.402 16.8447 122.392 17.4013 122.362 17.9578C122.321 19.1503 122.059 20.1342 121.574 20.9093C121.089 21.6944 120.413 22.2708 119.544 22.6584C118.676 23.0559 117.656 23.2447 116.474 23.2447ZM116.474 20.7503C117.232 20.7503 117.858 20.5218 118.353 20.0646C118.848 19.6075 119.1 18.8721 119.13 17.8683C119.161 17.3019 119.171 16.7652 119.171 16.2683C119.171 15.7714 119.161 15.2447 119.13 14.6882C119.12 14.0124 118.989 13.4659 118.757 13.0385C118.524 12.6112 118.211 12.3031 117.818 12.0944C117.434 11.8957 116.979 11.7963 116.464 11.7963C115.949 11.7963 115.495 11.8957 115.101 12.0944C114.707 12.2932 114.394 12.6112 114.162 13.0385C113.93 13.4659 113.809 14.0124 113.778 14.6882C113.768 15.2447 113.758 15.7714 113.758 16.2683C113.758 16.7652 113.768 17.3019 113.778 17.8683C113.819 18.8721 114.081 19.6075 114.566 20.0646C115.061 20.5218 115.697 20.7503 116.474 20.7503Z" fill="black"></path>
+<path d="M129.693 23.2447C128.461 23.2447 127.401 23.046 126.532 22.6385C125.664 22.2311 124.987 21.6348 124.503 20.8597C124.028 20.0746 123.766 19.1305 123.725 18.0174C123.715 17.4609 123.705 16.8646 123.705 16.2385C123.705 15.6025 123.715 15.0062 123.725 14.4398C123.766 13.3565 124.028 12.4323 124.503 11.6671C124.977 10.9019 125.664 10.3156 126.553 9.91804C127.441 9.51059 128.481 9.31183 129.693 9.31183C130.663 9.31183 131.521 9.43108 132.258 9.67953C132.995 9.92798 133.611 10.246 134.106 10.6435C134.601 11.041 134.985 11.4684 135.247 11.9354C135.51 12.4025 135.651 12.8497 135.661 13.277C135.661 13.3963 135.621 13.4957 135.54 13.5752C135.459 13.6547 135.358 13.7044 135.227 13.7044H132.783C132.652 13.7044 132.551 13.6746 132.48 13.6249C132.41 13.5752 132.349 13.4957 132.289 13.3963C132.198 13.1677 132.046 12.9292 131.844 12.6907C131.642 12.4522 131.37 12.2435 131.026 12.0845C130.683 11.9156 130.239 11.8361 129.683 11.8361C128.855 11.8361 128.199 12.0447 127.724 12.4721C127.249 12.8994 126.987 13.5951 126.947 14.569C126.906 15.682 126.906 16.8149 126.947 17.9578C126.987 18.9615 127.249 19.687 127.744 20.1243C128.239 20.5615 128.896 20.7802 129.724 20.7802C130.259 20.7802 130.744 20.6907 131.168 20.5019C131.592 20.3131 131.935 20.0249 132.177 19.6174C132.43 19.2199 132.551 18.7031 132.551 18.087V17.6H130.4C130.269 17.6 130.158 17.5503 130.067 17.451C129.976 17.3516 129.926 17.2423 129.926 17.1131V15.8708C129.926 15.7317 129.976 15.6124 130.067 15.523C130.158 15.4336 130.269 15.3839 130.4 15.3839H135.227C135.369 15.3839 135.49 15.4336 135.581 15.523C135.672 15.6124 135.722 15.7317 135.722 15.8708V17.9876C135.722 19.1006 135.48 20.0447 134.985 20.8398C134.49 21.6249 133.793 22.2311 132.874 22.6485C131.986 23.0361 130.915 23.2447 129.693 23.2447Z" fill="black"></path>
+<path d="M137.944 23.0559C137.802 23.0559 137.681 23.0063 137.59 22.9168C137.499 22.8274 137.449 22.7081 137.449 22.569V9.97768C137.449 9.83855 137.499 9.71929 137.59 9.62985C137.681 9.54041 137.802 9.49072 137.944 9.49072H140.165C140.307 9.49072 140.428 9.54041 140.519 9.62985C140.61 9.71929 140.66 9.83855 140.66 9.97768V22.569C140.66 22.7081 140.61 22.8274 140.519 22.9168C140.428 23.0063 140.307 23.0559 140.165 23.0559H137.944Z" fill="black"></path>
+<path d="M143.366 23.0559C143.225 23.0559 143.104 23.0062 143.013 22.9168C142.922 22.8274 142.872 22.7081 142.872 22.569V9.97767C142.872 9.83854 142.922 9.71928 143.013 9.62984C143.104 9.5404 143.225 9.49071 143.366 9.49071H145.154C145.356 9.49071 145.497 9.5404 145.588 9.62984C145.679 9.71928 145.74 9.78885 145.77 9.83854L151.031 17.918V9.96773C151.031 9.8286 151.082 9.70935 151.172 9.6199C151.263 9.53046 151.374 9.48077 151.506 9.48077H153.515C153.657 9.48077 153.778 9.53046 153.869 9.6199C153.96 9.70935 154.01 9.8286 154.01 9.96773V22.559C154.01 22.6882 153.96 22.7975 153.869 22.8969C153.778 22.9963 153.657 23.046 153.515 23.046H151.708C151.506 23.046 151.374 22.9963 151.284 22.8969C151.203 22.7975 151.132 22.728 151.092 22.6982L145.851 14.8671V22.559C145.851 22.6982 145.8 22.8174 145.709 22.9069C145.618 22.9963 145.497 23.046 145.356 23.046H143.366V23.0559Z" fill="black"></path>
+                                </g></svg>
+                            
+                        </a>
+        
+                    </div>
+                    
+                    <div class="nav-wrapper-desktop">
+                        <ul class="div-2" data-helpjuice-element="Middle Navigation List" data-helpjuice-attributes="link_list,visibility">
+                            <li class="navigation-item">
+                                <a href="https://multilogin.com/" target="_blank" class="text-wrapper" data-helpjuice-element="Website Link" data-helpjuice-attributes="text,link,font_size,color">Website</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="https://status.multilogin.com/" target="_blank" class="contact-2" data-helpjuice-element="Server status Link" data-helpjuice-attributes="text,link,font_size,color">Server status</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="https://documenter.getpostman.com/view/28533318/2s946h9Cv9" target="_blank" class="contact-2" data-helpjuice-element="API documentation Link" data-helpjuice-attributes="text,link,font_size,color">API documentation</a>
+                            </li>
+                            <li class="navigation-item">
+                                <a href="https://multilogin.com/blog/" target="_blank" class="contact-2" data-helpjuice-element="Blog Link" data-helpjuice-attributes="text,link,font_size,color">Blog</a>
+                            </li>
+                        </ul>
+                        
+                        <div class="div-2">
+                            <a href="https://t.me/multilogin_chat" class="navigation-item-2" data-helpjuice-element="Community Link" data-helpjuice-attributes="link,visibility">
+                                <img class="component" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/component-153-2.svg" alt="Telegram Icon" data-helpjuice-element="Multilogin Header Text" data-helpjuice-attributes="visibility,image">
+                                <span class="contact-2" data-helpjuice-element="Community Link Text" data-helpjuice-attributes="text,font_size,color">Community</span>
+                            </a>
+                            <div class="buttons">
+                                
+                                    <div class="hj-language-switcher" data-helpjuice-element="Language Switcher" data-helpjuice-attributes="visibility,background">
+                                        <div class="current-language">
+                                            
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 15C11.8659 15 15 11.8659 15 8C15 4.13409 11.8659 1 8 1M8 15C4.13409 15 1 11.8659 1 8C1 4.13409 4.13409 1 8 1M8 15C9.90909 15 10.5455 11.8182 10.5455 8C10.5455 4.18182 9.90909 1 8 1M8 15C6.09091 15 5.45455 11.8182 5.45455 8C5.45455 4.18182 6.09091 1 8 1M1.63636 10.5455H14.3636M1.63636 5.45455H14.3636" stroke="#010E27" stroke-width="1.4"></path>
+                                                </svg>
+                                            
+                                            <span class="language-name" data-helpjuice-element="Language Code" data-helpjuice-attributes="font_size,color">EN</span>
+                                        </div>
+                                        
+                                            <div class="languages">
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/en_US/retrieving-folder-workspace-ids" class="current">
+                                                                <span class="flag-icon flag-icon-us"></span>
+                                                                
+                                                                    <span class="language-name">English</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/pt_BR/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-br"></span>
+                                                                
+                                                                    <span class="language-name">Português</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/ru_RU/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-ru"></span>
+                                                                
+                                                                    <span class="language-name">Русский</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/cn_CN/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-cn"></span>
+                                                                
+                                                                    <span class="language-name">中文 (中国)</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/vi_VI/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-vi"></span>
+                                                                
+                                                                    <span class="language-name">Tiếng Việt</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                
+                                    <a href="https://app.multilogin.com/en/auth/signin" target="_blank" class="text-button">
+                                        
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.68532 1.05762H11.8568C12.2659 1.05762 12.6584 1.22017 12.9477 1.50951C13.2371 1.79885 13.3996 2.19128 13.3996 2.60047V13.4005C13.3996 13.8097 13.2371 14.2021 12.9477 14.4914C12.6584 14.7808 12.2659 14.9433 11.8568 14.9433H5.68532M10.3139 8.00047L7.22818 4.91476M10.3139 8.00047L7.22818 11.0862M10.3139 8.00047H2.59961" stroke="#010E27" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        
+                                        <span data-helpjuice-element="Logout Link Text" data-helpjuice-attributes="text,font_size,color">Log in</span>
+                                    </a>
+                                <a href="https://multilogin.com/checkout/?planId=359" target="_blank" class="button-nav" data-helpjuice-element="View Plans Link" data-helpjuice-attributes="visibility,link,background,border_color">
+                                    <span class="view-plans" data-helpjuice-element="View Plans Link Text" data-helpjuice-attributes="text,font_size,color">Try for €1.99</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-btn mobile-menu-btn-innner" aria-label="Open mobile menu"><i class="fas fa-bars"></i></button>
+                </nav>
+                
+                <div class="nav-wrapper-mobile nav-wrapper-mobile-inner">
+                    <ul class="div-2" data-helpjuice-element="Middle Navigation List" data-helpjuice-attributes="link_list,visibility">
+                        <li class="navigation-item">
+                            <a href="https://multilogin.com/" target="_blank" class="text-wrapper" data-helpjuice-element="Website Link" data-helpjuice-attributes="text,link,font_size,color">Website</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="https://status.multilogin.com/" target="_blank" class="contact-2" data-helpjuice-element="Server status Link" data-helpjuice-attributes="text,link,font_size,color">Server status</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="https://documenter.getpostman.com/view/28533318/2s946h9Cv9" class="contact-2" data-helpjuice-element="API documentation Link" data-helpjuice-attributes="text,link,font_size,color">API documentation</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="https://multilogin.com/blog/" class="contact-2" data-helpjuice-element="Blog Link" data-helpjuice-attributes="text,link,font_size,color">Blog</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="https://t.me/multilogin_chat" class="navigation-item-2" data-helpjuice-element="Community Link" data-helpjuice-attributes="link,visibility">
+                                <img class="component" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/component-153-2.svg" alt="Telegram Icon" data-helpjuice-element="Multilogin Header Text" data-helpjuice-attributes="visibility,image">
+                                <span class="contact-2" data-helpjuice-element="Community Link Text" data-helpjuice-attributes="text,font_size,color">Community</span>
+                            </a>
+                        </li>
+                        <li class="navigation-item">
+                            <div class="buttons">
+                                
+                                    <div class="hj-language-switcher" data-helpjuice-element="Language Switcher" data-helpjuice-attributes="visibility,background">
+                                        <div class="current-language">
+                                            
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 15C11.8659 15 15 11.8659 15 8C15 4.13409 11.8659 1 8 1M8 15C4.13409 15 1 11.8659 1 8C1 4.13409 4.13409 1 8 1M8 15C9.90909 15 10.5455 11.8182 10.5455 8C10.5455 4.18182 9.90909 1 8 1M8 15C6.09091 15 5.45455 11.8182 5.45455 8C5.45455 4.18182 6.09091 1 8 1M1.63636 10.5455H14.3636M1.63636 5.45455H14.3636" stroke="#010E27" stroke-width="1.4"></path>
+                                                </svg>
+                                            
+                                            <span class="language-name" data-helpjuice-element="Language Code" data-helpjuice-attributes="font_size,color">English</span>
+                                        </div>
+                                        
+                                            <div class="languages">
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/en_US/retrieving-folder-workspace-ids" class="current">
+                                                                <span class="flag-icon flag-icon-us"></span>
+                                                                
+                                                                    <span class="language-name">English</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/pt_BR/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-br"></span>
+                                                                
+                                                                    <span class="language-name">Português</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/ru_RU/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-ru"></span>
+                                                                
+                                                                    <span class="language-name">Русский</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/cn_CN/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-cn"></span>
+                                                                
+                                                                    <span class="language-name">中文 (中国)</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                                    
+                                                        <div>
+                                                            <a href="https://multilogin.com/help/vi_VI/retrieving-folder-workspace-ids" class="">
+                                                                <span class="flag-icon flag-icon-vi"></span>
+                                                                
+                                                                    <span class="language-name">Tiếng Việt</span>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="login-plans-wrapper">
+                        <a href="https://app.multilogin.com/en/auth/signin" target="_blank" class="login-mobile-btn" data-helpjuice-element="Login Link Text" data-helpjuice-attributes="text,font_size,color">Log in</a>
+                        <a href="https://multilogin.com/checkout/?planId=359" target="_blank" class="view-plans-mobile-btn" data-helpjuice-element="View Plans Link" data-helpjuice-attributes="visibility,link,text,background,border_color">View Plans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--END_COMPONENT_HEADER_NAV_BAR-->
+    
+    <!--START_COMPONENT_HERO_SECTION-->
+    <section class="hero " data-helpjuice-component="Hero Section" data-helpjuice-element="Container" data-helpjuice-attributes="visibility,background">
+        
+            <div class="hero-wrapper">
+                <div class="inner-category-content">
+                    <div class="category-content">
+                        
+                            <h1 data-helpjuice-element="Main Title" data-helpjuice-attributes="text,font_size,color">Quick solutions with Developer Tools</h1>
+                            <p data-helpjuice-element="Main Description" data-helpjuice-attributes="text,font_size,color">Quick solutions with Developer Tools: easy guides to access tokens, IDs, and key info for faster, smoother Multilogin setup and troubleshooting.</p>
+                        
+                    </div>
+                    <div class="search-form" autocomplete="off">
+                        <span class="search-icon">
+                            <img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Search.svg" alt="search icon" data-helpjuice-element="Search Icon" data-helpjuice-attributes="visibility,image">
+                        </span>
+                      
+                        <input id="search" type="search" placeholder="Start by searching here" autocomplete="off" data-helpjuice-element="Search placeholder" data-helpjuice-attributes="placeholder,font_size,color">
+                        <article id="search_results" style="display: none;">
+                            <div id="results">
+                                <div class="page_title">
+                                    <div class="left-align">
+                                        <h1 class="intro center"></h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="">
+                                        <ul class="list search-results">
+                                            <!-- load search results here -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="no-results" class="hidden">
+                                <div class="no-results-wrap js_equalise_is_landing">
+                                <!-- if no results found => show contact form -->
+                                    <div class="contact">
+                                        <h1>Contact Us</h1>
+                                        <p class="empty-paragraph">If you still have questions or prefer to get help directly from an agent, please submit a request. <br>We’ll get back to you as soon as possible.</p>
+                                        <div class="contact-form">
+                                            <form accept-charset="UTF-8" action="https://multilogin.com/questions" class="form floating-labels" id="new_question" method="post">
+                                                <fieldset>
+                                                    <p> Please fill out the contact form below and we will reply as soon as possible.</p>
+                                                    <!-- Don't modify or delete this below -->
+                                                    
+                                                    <input type="hidden" value="16296" name="question[account_id]" id="question_account_id">
+                                                    <input placeholder="Your email" class="field email" type="email" name="question[email]" id="question_email" required="">
+                                                    <input placeholder="Your question" type="text" class="field message" name="question[name]" id="question_name" required="">
+                                                    <textarea placeholder="Description (details)" class="field message" type="text" name="question[description]" id="question_description"></textarea>
+                                                    
+                                                    <div><button id="question_submit" class="button">Contact Support</button></div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="categories-nav-wrapper">
+                <ul class="categories-nav">
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/getting-started-with-multilogin-x-automation" id="920978" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Getting started with Multilogin automation</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/basic-automation-with-cli" id="920981" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Basic automation with CLI</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/postman" id="620631" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Low-code automation with Postman</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/script-runner-predefined-scripts" id="920983" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Script runner &amp; predefined scripts</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/puppeteer-selenium-and-playwright" id="920984" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Puppeteer, Selenium, and Playwright</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/custom-api-scripts-with-python" id="920985" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Custom Python scripts</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools" id="1023463" class="category-item active-category" data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">Quick solutions with Developer Tools</a>
+                            
+                        </li>
+                    
+                        <li class="item">
+                            <a href="https://multilogin.com/help/en_US/external-automation-tools" id="1039320" class="category-item " data-helpjuice-element="Category Names" data-helpjuice-attributes="font_size,color">External automation tools</a>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+            
+        
+    </section>
+    <!--END_COMPONENT_HERO_SECTION-->
+    
+    <main id="main-content" class="article-content">
+        
+
+<div class="container">
+    <!-- START_COMPONENT_BREADCRUMBS-->
+    <ul class="breadcrumbs" data-helpjuice-component="Breadcrumb" data-helpjuice-element="Container" data-helpjuice-attributes="visibility">
+        <li>
+            <a href="https://multilogin.com/help/en_US" data-helpjuice-element="Home Link" data-helpjuice-attributes="text,link,font_size,color">Home</a>
+        </li>
+        <li>
+            <img class="separator" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Line_13.png" alt="breadcrumb separator bar" data-helpjuice-element="Breadcrumb separator bar" data-helpjuice-attributes="visibility,image">
+        </li>
+        
+            
+                <li>
+                    <a href="https://multilogin.com/help/en_US/multilogin-x" class="item" data-helpjuice-element="Breadcrumb Link" data-helpjuice-attributes="font_size,color">Multilogin (latest)</a>
+                </li>
+            
+            <li>
+                <img class="separator" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Line_13.png" alt="breadcrumb separator bar" data-helpjuice-element="Breadcrumb separator bar" data-helpjuice-attributes="visibility,image">
+            </li>
+        
+            
+                <li>
+                    <a href="https://multilogin.com/help/en_US/api" class="item" data-helpjuice-element="Breadcrumb Link" data-helpjuice-attributes="font_size,color">Efficient task automation with API</a>
+                </li>
+            
+            <li>
+                <img class="separator" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Line_13.png" alt="breadcrumb separator bar" data-helpjuice-element="Breadcrumb separator bar" data-helpjuice-attributes="visibility,image">
+            </li>
+        
+            
+                    <li>
+                        <a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools" class="item-last" data-helpjuice-element="Breadcrumb Link" data-helpjuice-attributes="font_size,color">Quick solutions with Developer Tools</a>
+                    </li>
+            
+            <li>
+                <img class="separator" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Line_13.png" alt="breadcrumb separator bar" data-helpjuice-element="Breadcrumb separator bar" data-helpjuice-attributes="visibility,image">
+            </li>
+        
+        <li><span class="question-name" data-helpjuice-element="Breadcrumb question name" data-helpjuice-attributes="font_size,color">How to get profile, folder, and workspace IDs in DevTools</span></li>
+    </ul>
+    <!-- END_COMPONENT_BREADCRUMBS-->
+</div>
+
+<!--START_COMPONENT_ARTICLE_CONTENT-->
+<div class="container" data-helpjuice-component="Article Content" data-helpjuice-element="Container" data-helpjuice-attributes="background">
+    <div class="article-page">
+        <div class="article-content" data-controller="feedbacks" data-feedbacks-load-form-value="https://multilogin.com/help/admin/feedbacks/comments/new?question_id=2224889">
+            <h1 class="article-title" data-helpjuice-element="Article Title" data-helpjuice-attributes="font_size,color">How to get profile, folder, and workspace IDs in DevTools</h1>
+            <div class="article-meta">
+                <p>
+                    <span class="author-image" data-helpjuice-element="Author Avatar" data-helpjuice-attributes="visibility"> <img class="avatar circle" width="96" height="96" style="background: url(&quot;/initials_avatars/YV?bg=fc37bb&amp;s=192&amp;fg=fff&quot;) 0% 0% / 96px 96px;" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/46f57e7cb80a071e5a1e568cb2830359.png" alt="Author Avatar Image"></span>
+                    <span data-helpjuice-element="Written By Text" data-helpjuice-attributes="text,font_size,color">Written by</span> <span class="author-name" data-helpjuice-element="Author Name" data-helpjuice-attributes="font_size,color"> Yelena V </span>
+                  <span class="updated-date updated-date-desktop" data-helpjuice-element="Article Updated Date" data-helpjuice-attributes="font_size,color">( <span data-helpjuice-element="Updated On Static Text" data-helpjuice-attributes="text,font_size,color">Updated on</span> March 27th, 2026 )</span>
+                </p>
+                <p> <span class="updated-date updated-date-mobile" data-helpjuice-element="Article Updated Date" data-helpjuice-attributes="font_size,color"><span data-helpjuice-element="Updated On Static Text" data-helpjuice-attributes="text,font_size,color">Updated on</span> March 27th, 2026</span></p>
+            </div>
+            
+            <div class="helpjuice-editor-content">
+                <div class="helpjuice-article-body-content helpjuice-editor-content"><p>Profile, folder, and workspace IDs are required to run the majority of API requests with Multilogin. Let's explore how to get them using Developer Tools.</p><h2 id="how-to-get-profile-ids-0" data-toc="true">How to get profile IDs</h2><p>It is easy to find profile IDs in Multilogin interface:</p><ol>
+<li>Select a profile or several profiles in the list using checkboxes on the left</li>
+<li>Click “Copy profile ID” in the top menu</li>
+</ol><figure class="image"><img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Copy profile ID.png"></figure><h2 id="how-to-get-workspace-and-folder-ids-1" data-toc="true">How to get workspace and folder IDs</h2><p>Multilogin comes as a desktop app and has a web-accessible interface. Pick the version that works best for you!</p><div class="helpjuice-accordion" data-controller="editor--toggle-element">
+<h2 class="helpjuice-accordion-title" id="desktop-app-2" data-toc="true">Desktop app</h2>
+<div class="helpjuice-accordion-body active" data-editor--toggle-element-target="body">
+<ol>
+<li data-ai-suggestion=" Then open  Developer tools  to find the required IDs.">Open Multilogin app</li>
+<li data-ai-suggestion="">Open DevTools. Here's how to do that:<ol>
+<li data-ai-suggestion="">
+<strong>Windows and Linux:</strong> press&nbsp;<code>Ctrl + Shift + F12</code>
+</li>
+<li data-ai-suggestion="">
+<strong>macOS: </strong>press&nbsp;<code>Cmd + Shift + Fn + F12</code>
+</li>
+</ol>
+</li>
+<li data-ai-suggestion="">Switch to the “Network” tab in the DevTools</li>
+<li data-ai-suggestion="">Click the Multilogin logo at the top left of the sidebar</li>
+<li data-ai-suggestion="">A dropdown will appear with all the workspaces you’re part of</li>
+<li data-ai-suggestion="">Click the one you want to switch to</li>
+<li data-ai-suggestion="">In the logs appearing in DevTools, search for&nbsp;the word <strong>user </strong>or<strong> folders</strong> and click on it</li>
+<li>Switch to the “Preview” tab in the newly opened panel, where you will find the <strong>workspace</strong><strong> ID </strong>or<strong> folder</strong>
+</li>
+</ol>
+<figure class="image"><img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/ab8977bf-6069-4646-bffa-d35e554e702f.jpg" alt="Web Inspector — wails — profiles 2026-02-20 at 2.16.39 PM"></figure><div class="helpjuice-callout info">
+<div class="helpjuice-callout-body"><p>Refer to the <a href="https://multilogin.com/help/how-to-switch-between-multilogin-workspaces">How to switch between Multilogin workspaces</a> article for more details about switching workspaces.</p></div>
+<div class="helpjuice-callout-delete">&nbsp;</div>
+</div>
+</div>
+<div class="helpjuice-accordion-toggle">&nbsp;</div>
+<div class="helpjuice-accordion-delete">&nbsp;</div>
+</div><div class="helpjuice-accordion" data-controller="editor--toggle-element">
+<h2 class="helpjuice-accordion-title" id="web-interface-3" data-toc="true">Web interface</h2>
+<div class="helpjuice-accordion-body active" data-editor--toggle-element-target="body">
+<ol>
+<li data-ai-suggestion=" Then open  Developer tools  to find the required IDs.">Go to the&nbsp;“Profiles”&nbsp;page in Multilogin.</li>
+<li data-ai-suggestion="">Open DevTools. Here's how to do that for Chromium- and Firefox-based browsers:<ol>
+<li data-ai-suggestion="">
+<strong>Windows and Linux: </strong>press&nbsp;<code>Ctrl + Shift + I</code>
+</li>
+<li data-ai-suggestion="">
+<strong>macOS:</strong> press&nbsp;<code>Cmd&nbsp;+&nbsp;Option&nbsp;+&nbsp;I</code>
+</li>
+</ol>
+</li>
+<li data-ai-suggestion="">Switch to the “Network” tab in the DevTools panel and refresh the page</li>
+<li data-ai-suggestion="">In the logs appearing in DevTools, search for&nbsp;the word <strong>workspaces </strong>or<strong> folders</strong>&nbsp;and click on it</li>
+<li>Switch to the “Response” tab in the newly opened panel, where you will find the <strong>workspace</strong><strong> IDs</strong>
+</li>
+</ol>
+<figure class="image"><img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/e1befc8a-c5c5-49e0-8913-f02f33be50eb.png" alt="Workspace and folder IDs"></figure>
+</div>
+<div class="helpjuice-accordion-toggle">&nbsp;</div>
+<div class="helpjuice-accordion-delete">&nbsp;</div>
+</div><h2 id="how-to-get-workspace-and-default-folder-id-via-gui-4" data-toc="true">How to get workspace (and default folder) ID via GUI</h2><p id="how-to-get-workspace-and-folder-ids-2" data-toc="true">You can get workspace and default folder ID via GUI. The workspace ID is the same as the ID of the default folder. If you don't need the other folders – you can follow the steps below:</p><ol>
+<li id="how-to-get-workspace-and-folder-ids-2" data-toc="true">Click the Multilogin logo in the upper left corner and select the workspace you need</li>
+<li id="how-to-get-workspace-and-folder-ids-2" data-toc="true">Click “Account” → “Account settings” in the left bottom corner</li>
+<li id="how-to-get-workspace-and-folder-ids-2" data-toc="true">Click the copy button next to the “Workspace ID” field</li>
+</ol><figure class="image"><img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/ddea966b-f6fe-47ee-9abe-559d965e17dc.png" alt="Zight 2025-10-28 at 15.05.25"></figure></div>
+            </div>
+            
+            <div class="tags" data-helpjuice-element="Keywords" data-helpjuice-attributes="visibility">
+                
+                    <span data-helpjuice-element="Keyword item" data-helpjuice-attributes="font_size,color,background">profile id</span>
+                
+                    <span data-helpjuice-element="Keyword item" data-helpjuice-attributes="font_size,color,background">folder id</span>
+                
+                    <span data-helpjuice-element="Keyword item" data-helpjuice-attributes="font_size,color,background">workspace id</span>
+                
+                    <span data-helpjuice-element="Keyword item" data-helpjuice-attributes="font_size,color,background">how to get profile id</span>
+                
+            </div>
+            
+            <footer class="was-this-helpful" data-helpjuice-element="Feedback" data-helpjuice-attributes="visibility">
+                <p data-helpjuice-element="Feedback Title" data-helpjuice-attributes="text,font_size,color">Was this article helpful?</p>
+                <form accept-charset="UTF-8" action="https://multilogin.com/help/questions/2224889/feedbacks" class="new_feedback" id="new_feedback" method="post">
+                    <input name="authenticity_token" type="hidden" value="W7fIKyhlMGSYY6ZpNZ0EjAuXfvwpXGjx8KK7p9liJk0=" style="display: none">
+                    <input id="feedback_score" name="feedback[score]" type="hidden" value="0" style="display: none">
+                    <div id="yes" class="response feedback" data-helpjuice-element="Positive Feedback" data-helpjuice-attributes="visibility,background,border_color">
+                        <button>
+                            <svg width="19" height="19" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1225_2044)">
+                                <path d="M13.416 9.56738C14.1064 9.56738 14.666 9.00774 14.666 8.31738C14.666 7.62703 14.1064 7.06738 13.416 7.06738C12.7257 7.06738 12.166 7.62703 12.166 8.31738C12.166 9.00774 12.7257 9.56738 13.416 9.56738Z" fill="#005FF9"></path>
+                                <path d="M7.58398 9.56738C8.27434 9.56738 8.83398 9.00774 8.83398 8.31738C8.83398 7.62703 8.27434 7.06738 7.58398 7.06738C6.89363 7.06738 6.33398 7.62703 6.33398 8.31738C6.33398 9.00774 6.89363 9.56738 7.58398 9.56738Z" fill="#005FF9"></path>
+                                <path d="M10.491 2.06738C5.89102 2.06738 2.16602 5.80072 2.16602 10.4007C2.16602 15.0007 5.89102 18.734 10.491 18.734C15.0993 18.734 18.8327 15.0007 18.8327 10.4007C18.8327 5.80072 15.0993 2.06738 10.491 2.06738ZM10.4993 17.0674C6.81602 17.0674 3.83268 14.084 3.83268 10.4007C3.83268 6.71738 6.81602 3.73405 10.4993 3.73405C14.1827 3.73405 17.166 6.71738 17.166 10.4007C17.166 14.084 14.1827 17.0674 10.4993 17.0674ZM14.1743 11.9757C13.8827 11.7924 13.491 11.884 13.316 12.1757C12.6993 13.1507 11.6493 13.734 10.4993 13.734C9.34935 13.734 8.29935 13.1507 7.68268 12.1674C7.49935 11.8757 7.11602 11.784 6.82435 11.9674C6.53268 12.1507 6.44102 12.534 6.62435 12.8257C7.47435 14.184 8.91602 14.984 10.4993 14.984C12.0827 14.984 13.5243 14.1757 14.3743 12.834C14.5577 12.5424 14.466 12.159 14.1743 11.9757Z" fill="#005FF9"></path>
+                                </g>
+                                <defs>
+                                <clippath id="clip0_1225_2044">
+                                <rect width="20" height="20" fill="white" transform="translate(0.5 0.400391)"></rect>
+                                </clippath>
+                                </defs>
+                            </svg>
+                            <span data-helpjuice-element="Positive Feedback Text" data-helpjuice-attributes="text,font_size,color">Yes, thanks!</span>
+                        </button>
+                    </div>
+                    <div id="no" class="response feedback" data-helpjuice-element="Negative Feedback" data-helpjuice-attributes="visibility,background,border_color">
+                        <button>
+                            <svg width="19" height="19" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.416 9.56738C13.7771 9.56738 14.0757 9.44933 14.3118 9.21322C14.548 8.9771 14.666 8.67849 14.666 8.31738C14.666 7.95627 14.548 7.65766 14.3118 7.42155C14.0757 7.18544 13.7771 7.06738 13.416 7.06738C13.0549 7.06738 12.7563 7.18544 12.5202 7.42155C12.2841 7.65766 12.166 7.95627 12.166 8.31738C12.166 8.67849 12.2841 8.9771 12.5202 9.21322C12.7563 9.44933 13.0549 9.56738 13.416 9.56738ZM7.58268 9.56738C7.94379 9.56738 8.2424 9.44933 8.47852 9.21322C8.71463 8.9771 8.83268 8.67849 8.83268 8.31738C8.83268 7.95627 8.71463 7.65766 8.47852 7.42155C8.2424 7.18544 7.94379 7.06738 7.58268 7.06738C7.22157 7.06738 6.92296 7.18544 6.68685 7.42155C6.45074 7.65766 6.33268 7.95627 6.33268 8.31738C6.33268 8.67849 6.45074 8.9771 6.68685 9.21322C6.92296 9.44933 7.22157 9.56738 7.58268 9.56738ZM10.4993 18.734C9.34657 18.734 8.26324 18.5152 7.24935 18.0774C6.23546 17.6402 5.35352 17.0465 4.60352 16.2965C3.85352 15.5465 3.2599 14.6646 2.82268 13.6507C2.3849 12.6368 2.16602 11.5535 2.16602 10.4007C2.16602 9.24794 2.3849 8.16461 2.82268 7.15072C3.2599 6.13683 3.85352 5.25488 4.60352 4.50488C5.35352 3.75488 6.23546 3.16099 7.24935 2.72322C8.26324 2.28599 9.34657 2.06738 10.4993 2.06738C11.6521 2.06738 12.7355 2.28599 13.7493 2.72322C14.7632 3.16099 15.6452 3.75488 16.3952 4.50488C17.1452 5.25488 17.7388 6.13683 18.176 7.15072C18.6138 8.16461 18.8327 9.24794 18.8327 10.4007C18.8327 11.5535 18.6138 12.6368 18.176 13.6507C17.7388 14.6646 17.1452 15.5465 16.3952 16.2965C15.6452 17.0465 14.7632 17.6402 13.7493 18.0774C12.7355 18.5152 11.6521 18.734 10.4993 18.734ZM10.4993 17.0674C12.3466 17.0674 13.9196 16.4182 15.2185 15.1199C16.5168 13.821 17.166 12.2479 17.166 10.4007C17.166 8.55349 16.5168 6.98044 15.2185 5.68155C13.9196 4.38322 12.3466 3.73405 10.4993 3.73405C8.65213 3.73405 7.07935 4.38322 5.78102 5.68155C4.48213 6.98044 3.83268 8.55349 3.83268 10.4007C3.83268 12.2479 4.48213 13.821 5.78102 15.1199C7.07935 16.4182 8.65213 17.0674 10.4993 17.0674ZM7.27018 14.5674C7.3674 14.5674 7.46824 14.5396 7.57268 14.484C7.67657 14.4285 7.75629 14.359 7.81185 14.2757C8.1174 13.859 8.49935 13.5257 8.95768 13.2757C9.41602 13.0257 9.9299 12.9007 10.4993 12.9007C11.0688 12.9007 11.5827 13.0257 12.041 13.2757C12.4993 13.5257 12.8813 13.859 13.1868 14.2757C13.2424 14.359 13.3188 14.4285 13.416 14.484C13.5132 14.5396 13.6105 14.5674 13.7077 14.5674C13.9577 14.5674 14.1418 14.4563 14.2602 14.234C14.378 14.0118 14.3535 13.7757 14.1868 13.5257C13.8257 12.984 13.3188 12.536 12.666 12.1815C12.0132 11.8277 11.291 11.6507 10.4993 11.6507C9.70768 11.6507 8.98546 11.8277 8.33268 12.1815C7.6799 12.536 7.16602 12.9979 6.79102 13.5674C6.63824 13.8035 6.62102 14.0293 6.73935 14.2449C6.85713 14.4599 7.03407 14.5674 7.27018 14.5674Z" fill="#005FF9"></path>
+                            </svg>
+                            <span data-helpjuice-element="Negative Feedback Text" data-helpjuice-attributes="text,font_size,color">Not really</span>
+                        </button>
+                    </div>
+                </form>
+                <a class="enable-feedback" data-action="click-&gt;feedbacks#showFeedbackForm" data-helpjuice-element="Write Feedback" data-helpjuice-attributes="visibility">
+                    <svg width="18" height="19" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_674_4405)">
+                        <path d="M16.6667 0.400391H3.33333C2.44928 0.400391 1.60143 0.75158 0.976311 1.3767C0.35119 2.00182 0 2.84967 0 3.73372L0 13.7337C0 14.6178 0.35119 15.4656 0.976311 16.0907C1.60143 16.7159 2.44928 17.0671 3.33333 17.0671H5.75L9.45917 20.2029C9.60964 20.3302 9.80038 20.4001 9.9975 20.4001C10.1946 20.4001 10.3854 20.3302 10.5358 20.2029L14.25 17.0671H16.6667C17.5507 17.0671 18.3986 16.7159 19.0237 16.0907C19.6488 15.4656 20 14.6178 20 13.7337V3.73372C20 2.84967 19.6488 2.00182 19.0237 1.3767C18.3986 0.75158 17.5507 0.400391 16.6667 0.400391ZM18.3333 13.7337C18.3333 14.1758 18.1577 14.5997 17.8452 14.9122C17.5326 15.2248 17.1087 15.4004 16.6667 15.4004H14.25C13.8561 15.4005 13.4749 15.5402 13.1742 15.7946L10 18.4754L6.8275 15.7946C6.5263 15.5398 6.1445 15.4001 5.75 15.4004H3.33333C2.89131 15.4004 2.46738 15.2248 2.15482 14.9122C1.84226 14.5997 1.66667 14.1758 1.66667 13.7337V3.73372C1.66667 3.2917 1.84226 2.86777 2.15482 2.55521C2.46738 2.24265 2.89131 2.06706 3.33333 2.06706H16.6667C17.1087 2.06706 17.5326 2.24265 17.8452 2.55521C18.1577 2.86777 18.3333 3.2917 18.3333 3.73372V13.7337Z" fill="#005FF9"></path>
+                        <path d="M5.83333 6.23405H10C10.221 6.23405 10.433 6.14625 10.5893 5.98997C10.7455 5.83369 10.8333 5.62173 10.8333 5.40072C10.8333 5.1797 10.7455 4.96774 10.5893 4.81146C10.433 4.65518 10.221 4.56738 10 4.56738H5.83333C5.61232 4.56738 5.40036 4.65518 5.24408 4.81146C5.0878 4.96774 5 5.1797 5 5.40072C5 5.62173 5.0878 5.83369 5.24408 5.98997C5.40036 6.14625 5.61232 6.23405 5.83333 6.23405Z" fill="#005FF9"></path>
+                        <path d="M14.1667 7.90039H5.83333C5.61232 7.90039 5.40036 7.98819 5.24408 8.14447C5.0878 8.30075 5 8.51271 5 8.73372C5 8.95474 5.0878 9.1667 5.24408 9.32298C5.40036 9.47926 5.61232 9.56706 5.83333 9.56706H14.1667C14.3877 9.56706 14.5996 9.47926 14.7559 9.32298C14.9122 9.1667 15 8.95474 15 8.73372C15 8.51271 14.9122 8.30075 14.7559 8.14447C14.5996 7.98819 14.3877 7.90039 14.1667 7.90039Z" fill="#005FF9"></path>
+                        <path d="M14.1667 11.2334H5.83333C5.61232 11.2334 5.40036 11.3212 5.24408 11.4775C5.0878 11.6338 5 11.8457 5 12.0667C5 12.2877 5.0878 12.4997 5.24408 12.656C5.40036 12.8123 5.61232 12.9001 5.83333 12.9001H14.1667C14.3877 12.9001 14.5996 12.8123 14.7559 12.656C14.9122 12.4997 15 12.2877 15 12.0667C15 11.8457 14.9122 11.6338 14.7559 11.4775C14.5996 11.3212 14.3877 11.2334 14.1667 11.2334Z" fill="#005FF9"></path>
+                        </g>
+                        <defs>
+                        <clippath id="clip0_674_4405">
+                        <rect width="20" height="20" fill="white" transform="translate(0 0.400391)"></rect>
+                        </clippath>
+                        </defs>
+                    </svg>
+                    <span data-helpjuice-element="Write Feedback Text" data-helpjuice-attributes="font_size,color,text">Give feedback about this article</span>
+                </a>
+            </footer>
+        <a class="add-feedback-icon" target="_blank" data-action="click-&gt;feedbacks#showFeedbackForm" data-tooltip="Add Feedback for this Selection" data-popper-reference-hidden="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(-24.8px, 301.6px);">
+      <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="comment-alt-plus" class="svg-inline--fa fa-comment-alt-plus fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm16 352c0 8.8-7.2 16-16 16H288l-12.8 9.6L208 428v-60H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16 16v288zM336 184h-56v-56c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v56h-56c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h56v56c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16v-56h56c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z"></path></svg>
+     </a><div id="feedback-form" data-feedbacks-target="feedbackForm">
+  <form data-action="submit-&gt;feedbacks#submitForm" class="new_feedback_comment" id="new_feedback_comment" action="https://multilogin.com/help/admin/feedbacks/comments" accept-charset="UTF-8" data-remote="true" method="post">
+    <input type="hidden" name="authenticity_token" id="authenticity_token" value="6E9hmSMdE79fYmzf41KuxsKLwc6iPyyIAaF2GDnQl9PPJvHZAwIptjfIMpUYBXg2TIFJtx7ELywwvDpmQMteoA" autocomplete="off">
+    <h3>What's wrong with this article?</h3>
+    <button id="close-feedback-form" data-action="click-&gt;feedbacks#hideFeedbackForm"><i class="far fa-times"></i></button>
+    <input value="2224889" autocomplete="off" type="hidden" name="feedback_comment[question_id]" id="feedback_comment_question_id">
+    <input value="" data-feedbacks-target="selectedText" autocomplete="off" type="hidden" name="feedback_comment[excerpt]" id="feedback_comment_excerpt">
+      <div class="field">
+        <input data-feedbacks-target="feedbackOption" required="required" type="radio" value="inaccurate" name="feedback_comment[kind]" id="feedback_comment_kind_inaccurate">
+        <label for="feedback_comment_kind_inaccurate">Inaccurate: doesn't match what I see in the product</label>
+      </div>
+      <div class="field">
+        <input data-feedbacks-target="feedbackOption" required="required" type="radio" value="hard_to_understand" name="feedback_comment[kind]" id="feedback_comment_kind_hard_to_understand">
+        <label for="feedback_comment_kind_hard_to_understand">Hard to understand: the information is not clear</label>
+      </div>
+      <div class="field">
+        <input data-feedbacks-target="feedbackOption" required="required" type="radio" value="missing_info" name="feedback_comment[kind]" id="feedback_comment_kind_missing_info">
+        <label for="feedback_comment_kind_missing_info">Missing details: the information is not complete</label>
+      </div>
+      <div class="field">
+        <input data-feedbacks-target="feedbackOption" required="required" type="radio" value="irrelevant" name="feedback_comment[kind]" id="feedback_comment_kind_irrelevant">
+        <label for="feedback_comment_kind_irrelevant">Minor errors: formatting issues, typos, broken links</label>
+      </div>
+      <div class="field">
+        <input data-feedbacks-target="feedbackOption" required="required" type="radio" value="minor_errors" name="feedback_comment[kind]" id="feedback_comment_kind_minor_errors">
+        <label for="feedback_comment_kind_minor_errors">Translation issues: the translation is wrong or incomplete</label>
+      </div>
+      <div class="field">
+        <input data-feedbacks-target="feedbackOption" required="required" type="radio" value="other" name="feedback_comment[kind]" id="feedback_comment_kind_other">
+        <label for="feedback_comment_kind_other">Other</label>
+      </div>
+    <h3 class="additional-info">Additional details and suggestions</h3>
+    <div class="field">
+      <textarea placeholder="Tell us what you think" data-feedbacks-target="additionalReview" name="feedback_comment[comment]" id="feedback_comment_comment" cols="1" rows="5"></textarea>
+    </div>
+    <div class="field email">
+      <input name="feedback_comment[notify_about_changes]" type="hidden" value="0" autocomplete="off"><input id="notify-about-feedback-changes" data-feedbacks-target="notifyIcon" data-action="change-&gt;feedbacks#toggleEmail" type="checkbox" value="1" name="feedback_comment[notify_about_changes]">
+      <label for="notify-about-feedback-changes">Notify me about changes</label>
+      <input placeholder="Your Email" data-feedbacks-target="notifyEmail" type="email" name="feedback_comment[email]" id="feedback_comment_email" style="display: none;">
+    </div>
+    <div class="field actions">
+      <input type="submit" name="commit" value="Submit" data-feedbacks-target="submitButton" data-disable-with="Submit" disabled="disabled">
+      <button class="cancel-feedback" data-action="click-&gt;feedbacks#hideFeedbackForm">Cancel</button>
+    </div>
+</form></div></div>
+        
+        <!--Sidebar -->
+        <!--START_COMPONENT_SIDE_MENU-->
+        <aside class="article-sidebar" data-helpjuice-component="Side Menu" data-helpjuice-element="Container" data-helpjuice-attributes="background,visibility">
+            
+                <div class="helpjuice-table-of-contents-container" data-helpjuice-element="Table of Content" data-helpjuice-attributes="background,visibility" style="position: fixed; top: 100px;">
+                    <h2 data-helpjuice-element="Table of content title" data-helpjuice-attributes="text,font_size,color">In this article</h2>
+                    <ul class="helpjuice-toc-items no-h1-tag">
+                        
+                            <li><a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids#how-to-get-profile-ids-0" data-tag-name="H2" data-helpjuice-element="Table of content item" data-helpjuice-attributes="font_size,color">How to get profile IDs</a></li>
+                        
+                            <li><a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids#how-to-get-workspace-and-folder-ids-1" data-tag-name="H2" data-helpjuice-element="Table of content item" data-helpjuice-attributes="font_size,color">How to get workspace and folder IDs</a></li>
+                        
+                            <li><a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids#desktop-app-2" data-tag-name="H2" data-helpjuice-element="Table of content item" data-helpjuice-attributes="font_size,color">Desktop app</a></li>
+                        
+                            <li><a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids#web-interface-3" data-tag-name="H2" data-helpjuice-element="Table of content item" data-helpjuice-attributes="font_size,color">Web interface</a></li>
+                        
+                            <li><a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids#how-to-get-workspace-and-default-folder-id-via-gui-4" data-tag-name="H2" data-helpjuice-element="Table of content item" data-helpjuice-attributes="font_size,color">How to get workspace (and default folder) ID via GUI</a></li>
+                        
+                    </ul>
+                </div>
+            
+            
+            <div class="community-box" data-helpjuice-element="Community Box" data-helpjuice-attributes="background,visibility">
+                <h2 data-helpjuice-element="Multilogin Community Title" data-helpjuice-attributes="text,font_size,color">Multilogin community</h2>
+                <p data-helpjuice-element="Multilogin Community Subtitle" data-helpjuice-attributes="text,font_size,color">Stay informed, share your thoughts, and engage with others!</p>
+                <a href="https://t.me/multilogin_chat" class="telegram-btn">
+                    <img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/tele.svg" alt="Telegram Icon" data-helpjuice-element="Telegram Image" data-helpjuice-attributes="visibility,image">
+                    <span data-helpjuice-element="Join us on telegram" data-helpjuice-attributes="text,font_size,color">Join us on Telegram</span>
+                </a>
+            </div>
+            
+            <div class="recent-posts" data-helpjuice-element="Recent Posts" data-helpjuice-attributes="background,visibility">
+                <h2 data-helpjuice-element="Recent Posts Title" data-helpjuice-attributes="text,font_size,color">Read more on the topic</h2>
+                <a href="https://multilogin.com/blog/best-datacenter-proxies-for-web-scraping/" target="_blank" class="card" data-helpjuice-element="Rcent Blogs" data-helpjuice-attributes="link,text,font_size,color">
+                    <img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Multilogin_blog_illustrations_14_229_10_Best_Datacenter_Proxies-scaled.webp" alt="Blog Post Img" data-helpjuice-element="Recent Blog Image" data-helpjuice-attributes="visibility,image">
+                    <div class="meta-container">
+                        <p data-helpjuice-element="Recent Post Paragraph" data-helpjuice-attributes="text,font_size,color">10 Best Datacenter Proxies for Web Scraping (2025 Edition)</p>
+                        <div class="meta">
+                            <span data-helpjuice-element="Recent Post Date" data-helpjuice-attributes="text,font_size,color">Apr 2, 2025</span>
+                            <span data-helpjuice-element="Recent Post Reading time" data-helpjuice-attributes="text,font_size,color">5 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://multilogin.com/blog/what-is-google-serp-proxy/" target="_blank" class="card" data-helpjuice-element="Google SERP Link" data-helpjuice-attributes="link,text,font_size,color">
+                    <img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Multilogin_blog_illustrations_13_205_What_is_Google_SERP_proxy_-scaled.webp" alt="Google SERP Img" data-helpjuice-element="Google SERP Image" data-helpjuice-attributes="visibility,image">
+                    <div class="meta-container">
+                        <p data-helpjuice-element="Google SERP Paragraph" data-helpjuice-attributes="text,font_size,color">What is a Google SERP Proxy and Why Should You Care?</p>
+                        <div class="meta">
+                            <span data-helpjuice-element="Google SERP Date" data-helpjuice-attributes="text,font_size,color">Apr 1, 2025</span>
+                            <span data-helpjuice-element="Google SERP Reading Time" data-helpjuice-attributes="text,font_size,color">6 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://multilogin.com/blog/best-dedicated-uk-proxies/" target="_blank" class="card" data-helpjuice-element="UK Proxies Link" data-helpjuice-attributes="link,text,font_size,color">
+                    <img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Multilogin-blog-illustrations-12_191-Dedicated-UK-proxies-scaled.webp" alt="UK Proxy Img" data-helpjuice-element="UK Proxy Image" data-helpjuice-attributes="visibility,image">
+                    <div class="meta-container">
+                        <p data-helpjuice-element="UK Proxies Paragraph" data-helpjuice-attributes="text,font_size,color">What Are Dedicated UK Proxies? Everything You Need to Know</p>
+                        <div class="meta">
+                            <span data-helpjuice-element="UK Proxy Date" data-helpjuice-attributes="text,font_size,color">Apr 1, 2025</span>
+                            <span data-helpjuice-element="UK Proxy Reading Time" data-helpjuice-attributes="text,font_size,color">6 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+        <!--END_COMPONENT_SIDE_MENU-->
+        
+    </div>
+</div>
+<!--END_COMPONENT_ARTICLE_CONTENT-->
+
+<!--START_COMPONENT_RELATED_ARTICLES-->
+<section class="related-articles" data-helpjuice-component="Related Articles" data-helpjuice-element="Container" data-helpjuice-attributes="background,visibility">
+    <div class="container">
+        <div class="section-header">
+            <img src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Popular Article icon.png" alt="Related Article Title Icon" data-helpjuice-element="Popular Articles Title Icon" data-helpjuice-attributes="visibility,image">
+            <h2 data-helpjuice-element="Related Articles Title" data-helpjuice-attributes="text,font_size,color">Related articles</h2>
+        </div>
+        <div class="articles-grid">
+            <ul>
+                
+                    <li>
+                        <a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-the-token" id="2224876" data-helpjuice-element="Article Title" data-helpjuice-attributes="font_size,color">How to get API tokens in DevTools</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-user-id" id="2257358" data-helpjuice-element="Article Title" data-helpjuice-attributes="font_size,color">How to find a user ID in DevTools</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://multilogin.com/help/en_US/getting-started-with-multilogin-x-automation/multilogin-x-api-beginners-guide" id="3059431" data-helpjuice-element="Article Title" data-helpjuice-attributes="font_size,color">Multilogin API automation: beginner's guide</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://multilogin.com/help/en_US/teamwork/how-to-switch-between-multilogin-workspaces" id="3058002" data-helpjuice-element="Article Title" data-helpjuice-attributes="font_size,color">How to switch between Multilogin workspaces</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</section>
+<!--END_COMPONENT_RELATED_ARTICLES-->
+    </main>
+    
+<!--START_COMPONENT_FOOTER-->
+<footer class="footer-desktop footer-two" data-helpjuice-component="Footer" data-helpjuice-element="Container" data-helpjuice-attributes="background">
+    <div class="container">
+        <div class="footer-left">
+            <!-- ANTIDETECT PLATFORM -->
+            <div class="footer-column" data-helpjuice-element="Antidetect Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Antidetect Title" data-helpjuice-attributes="text,font_size,color">ANTIDETECT PLATFORM</h3>
+                <ul>
+                    <li><a href="https://multilogin.com/antidetect/antidetect-browser/" data-helpjuice-element="Antidetect browser Link" data-helpjuice-attributes="text,link,font_size,color">Antidetect browser</a></li>
+                    <li><a href="https://multilogin.com/gateway/residential-proxies/" data-helpjuice-element="Residential proxies Link" data-helpjuice-attributes="text,link,font_size,color">Residential proxies</a></li>                        
+                    <li><a href="https://multilogin.com/mobile-antidetect-browser/" data-helpjuice-element="Mobile antidetect browser Link" data-helpjuice-attributes="text,link,font_size,color">Mobile antidetect browser</a></li>
+                    <li><a href="https://multilogin.com/multi-account-management/" data-helpjuice-element="Multi-account management Link" data-helpjuice-attributes="text,link,font_size,color">Multi-account management</a></li>                        
+                    <li><a href="https://multilogin.com/headless-browser/" data-helpjuice-element="Headless browser Link" data-helpjuice-attributes="text,link,font_size,color">Headless browser</a></li>
+                    <li><a href="https://multilogin.com/antidetect/web-automation/" data-helpjuice-element="Web automation Link" data-helpjuice-attributes="text,link,font_size,color">Web automation</a></li>
+                    <li><a href="https://multilogin.com/web-automation/ai-quick-actions/" data-helpjuice-element="AI Quick Action Automation Link" data-helpjuice-attributes="text,link,font_size,color">AI Quick Action Automation</a></li>
+                </ul>
+            </div>
+            
+            <!-- MULTI-ACCOUNTING -->
+            <div class="footer-column" data-helpjuice-element="Multi-account Management Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Multiaccount Management Title" data-helpjuice-attributes="text,font_size,color">MULTI-ACCOUNTING</h3>
+                <ul>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-facebook-accounts/" data-helpjuice-element="Multiple Facebook accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Facebook accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-gmail-accounts/" data-helpjuice-element="Multiple Gmail accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Gmail accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-linkedin-accounts/" data-helpjuice-element="Multiple LinkedIn accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple LinkedIn accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-amazon-accounts/" data-helpjuice-element="Multiple Amazon accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Amazon accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-onlyfans-accounts/" data-helpjuice-element="Multiple Onlyfans accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Onlyfans accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-twitter-accounts/" data-helpjuice-element="Multiple Twitter accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Twitter accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-tiktok-accounts/" data-helpjuice-element="Multiple TikTok accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple TikTok accounts</a></li>
+                </ul>
+            </div>
+            
+            <!-- GEO PROXIES -->
+            <div class="footer-column" data-helpjuice-element="Geo Proxies Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Geo Proxies Title" data-helpjuice-attributes="text,font_size,color">GEO PROXIES</h3>
+                <ul>
+                    <li><a href="https://multilogin.com/gateway/uk-proxy-and-antidetect-bundle/" data-helpjuice-element="UK proxy Link" data-helpjuice-attributes="text,link,font_size,color">UK proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/usa-proxy-and-antidetect-bundle/" data-helpjuice-element="USA proxy Link" data-helpjuice-attributes="text,link,font_size,color">USA proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/japan-proxy-and-antidetect-bundle/" data-helpjuice-element="Japan proxy Link" data-helpjuice-attributes="text,link,font_size,color">Japan proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/india-proxy-untidetect-browser/" data-helpjuice-element="India proxy Link" data-helpjuice-attributes="text,link,font_size,color">India proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/pakistan-proxy-and-antidetect-browser/" data-helpjuice-element="Pakistan proxy Link" data-helpjuice-attributes="text,link,font_size,color">Pakistan proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/china-proxy-and-antidetect-bundle/" data-helpjuice-element="China proxy Link" data-helpjuice-attributes="text,link,font_size,color">China proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/new-zealand-proxy-and-antidetect-browser/" data-helpjuice-element="New Zealand proxy Link" data-helpjuice-attributes="text,link,font_size,color">New Zealand proxy</a></li>
+                </ul>
+            </div>
+
+            <!-- RESOURCES -->
+            <div class="footer-column" data-helpjuice-element="Resources Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Resources Title" data-helpjuice-attributes="text,font_size,color">RESOURCES</h3>
+                <ul>
+                    <li><a href="https://multilogin.com/help/en_US" data-helpjuice-element="Knowledge Base Link" data-helpjuice-attributes="text,link,font_size,color">Knowledge base</a></li>
+                    <li><a href="https://documenter.getpostman.com/view/28533318/2s946h9Cv9" data-helpjuice-element="API Documentation Link" data-helpjuice-attributes="text,link,font_size,color">API documentation</a></li>
+                    <li><a href="https://multilogin.com/glossary/" data-helpjuice-element="Glossary Link" data-helpjuice-attributes="text,link,font_size,color">Glossary</a></li>
+                    <li><a href="https://multilogin.com/blog/" data-helpjuice-element="Blog Link" data-helpjuice-attributes="text,link,font_size,color">Blog</a></li>
+                    <li><a href="https://status.multilogin.com/" data-helpjuice-element="Server Status Link" data-helpjuice-attributes="text,link,font_size,color">Server status</a></li>
+                    <li><a href="https://multilogin.com/release-notes/" data-helpjuice-element="Release Notes Link" data-helpjuice-attributes="text,link,font_size,color">Release notes</a></li>
+                </ul>
+            </div>
+        </div>
+            
+        <div class="footer-right">
+
+            <!-- COMPARISON -->
+            <div class="footer-column" data-helpjuice-element="Comparison Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Comparison Title" data-helpjuice-attributes="text,font_size,color">COMPARISON</h3>
+                <ul>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-gologin/" data-helpjuice-element="MultiloginvsGologin Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Gologin</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-adspower/" data-helpjuice-element="MultiloginvsAdspower Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Adspower</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-dolphin-anty/" data-helpjuice-element="MultiloginvsDolphin Anty Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Dolphin Anty</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-incogniton/" data-helpjuice-element="MultiloginvsIncognition Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Incognition</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-octo-browser/" data-helpjuice-element="MultiloginvsOcto Browser Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Octo Browser</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-undetectable-io/" data-helpjuice-element="MultiloginvsUndetectable Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Undetectable</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-morelogin/" data-helpjuice-element="MultiloginvsMoreLogin Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. MoreLogin</a></li>
+                </ul>
+            </div>
+            
+                <!-- PLATFORM PROXIES -->
+                <div class="footer-column" data-helpjuice-element="Platform Proxies Section" data-helpjuice-attributes="visibility">
+                    <h3 data-helpjuice-element="Platform Proxies Title" data-helpjuice-attributes="text,font_size,color">PLATFORM PROXIES</h3>
+                    <ul>
+                        <li>
+                            <a href="https://multilogin.com/gateway/mobile-proxy-and-antidetect-browser/" data-helpjuice-element="Mobile proxy Link" data-helpjuice-attributes="text,link,font_size,color">Mobile proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/reddit-proxy-antidetect-bundle/" data-helpjuice-element="Reddit proxy Link" data-helpjuice-attributes="text,link,font_size,color">Reddit proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/facebook-proxy-and-antidetect-bundle/" data-helpjuice-element="Facebook proxy Link" data-helpjuice-attributes="text,link,font_size,color">Facebook proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/socks5-proxy-and-antidetect-browser/" data-helpjuice-element="SOCKS5 Link" data-helpjuice-attributes="text,link,font_size,color">SOCKS5 proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/instagram-proxy-and-antidetect-bundle/" data-helpjuice-element="Instagram proxy Link" data-helpjuice-attributes="text,link,font_size,color">Instagram proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/onlyfans-proxy-and-antidetect-browser/" data-helpjuice-element="Onlyfans proxy Link" data-helpjuice-attributes="text,link,font_size,color">Onlyfans proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/linkedin-proxy-and-antidetect-bundle/" data-helpjuice-element="LinkedIn proxy Link" data-helpjuice-attributes="text,link,font_size,color">LinkedIn proxy</a>
+                        </li>
+                    </ul>
+                </div>
+
+            <!-- FREE TOOLS -->
+            <div class="footer-column" data-helpjuice-element="Free Tools Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Free Tools Title" data-helpjuice-attributes="text,font_size,color">FREE TOOLS</h3>
+                <ul>
+                    <li><a href="https://multilogin.com/online-url-to-text-converter/" data-helpjuice-element="Online URL to Text Converter Link" data-helpjuice-attributes="text,link,font_size,color">Online URL to text converter</a></li>
+                </ul>
+            </div>
+
+            <!-- GET IN TOUCH -->
+            <div class="footer-column" data-helpjuice-element="Get in Touch Section" data-helpjuice-attributes="visibility">
+                <h3 data-helpjuice-element="Get in Touch Title" data-helpjuice-attributes="text,font_size,color">GET IN TOUCH</h3>
+                <ul>
+                    <li>
+                        <span data-helpjuice-element="Contact Support Text" data-helpjuice-attributes="text,link,font_size,color">Contact 24/7 support</span><br>
+                        <a class="support-email" href="mailto:support@multilogin.com" data-helpjuice-element="Support Email" data-helpjuice-attributes="text,link,font_size,color">support@multilogin.com</a>
+                    </li>
+                    <li><a href="https://multilogin.com/contact-sales/" data-helpjuice-element="Contact Sales Link" data-helpjuice-attributes="text,link,font_size,color">Contact sales</a></li>
+                    <li><a href="https://multilogin.com/referral-program/" data-helpjuice-element="Referral Program Link" data-helpjuice-attributes="text,link,font_size,color">Referral program</a></li>
+                    <li><a href="https://multilogin.com/affiliate-program/" data-helpjuice-element="Affiliate Program Link" data-helpjuice-attributes="text,link,font_size,color">Affiliate program</a></li>
+                    <li><a href="https://multilogin.com/pricing/" data-helpjuice-element="Pricing Link" data-helpjuice-attributes="text,link,font_size,color">Pricing page</a></li>
+                    <li><a href="https://www.linkedin.com/company/eyesofwonder/" data-helpjuice-element="Careers Link" data-helpjuice-attributes="text,link,font_size,color">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="copright-section">
+                <p data-helpjuice-element="Copyright Text" data-helpjuice-attributes="text,font_size,color">© 2026 Multilogin. All rights reserved.</p>
+                <ul class="Privacy-Termsofuse">
+                    <li>
+                        <a href="https://multilogin.com/privacy-policy/" data-helpjuice-element="Privacy policy Link" data-helpjuice-attributes="text,link,font_size,color">Privacy policy</a>
+                    </li>
+                    <li>
+                        <a href="https://multilogin.com/terms-of-service/" data-helpjuice-element="Terms of service Link" data-helpjuice-attributes="text,link,font_size,color">Terms of service</a>
+                    </li>
+                    <li>
+                        <a href="https://multilogin.com/cookie-policy/" data-helpjuice-element="Cookie policy Link" data-helpjuice-attributes="text,link,font_size,color">Cookie policy</a>
+                    </li>
+                </ul>
+                <ul class="Socials">
+                    <li>
+                        <a href="https://www.linkedin.com/company/multilogin/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" data-helpjuice-element="Linkedin Link" data-helpjuice-attributes="visibility,link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                                <path d="M9.15967 17.849H6.65967V9.51562H9.15967V17.849ZM18.3263 17.849H15.8263V13.3973C15.8263 12.2373 15.413 11.6598 14.5938 11.6598C13.9447 11.6598 13.533 11.9831 13.3263 12.6306V17.849H10.8263C10.8263 17.849 10.8597 10.349 10.8263 9.51562H12.7997L12.9522 11.1823H13.0038C13.5163 10.349 14.3355 9.78396 15.4588 9.78396C16.313 9.78396 17.0038 10.0215 17.5313 10.6181C18.0622 11.2156 18.3263 12.0173 18.3263 13.1431V17.849Z" fill="#606775"></path>
+                                <path d="M7.92448 8.68164C8.63785 8.68164 9.21615 8.122 9.21615 7.43164C9.21615 6.74128 8.63785 6.18164 7.92448 6.18164C7.21111 6.18164 6.63281 6.74128 6.63281 7.43164C6.63281 8.122 7.21111 8.68164 7.92448 8.68164Z" fill="#606775"></path>
+                            </svg>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Multilogin-126072544645572/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-helpjuice-element="Facebook Link" data-helpjuice-attributes="visibility,link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                                <path d="M10.3981 19.125H13.3981V13.1175H16.1011L16.3981 10.1325H13.3981V8.625C13.3981 8.42609 13.4771 8.23532 13.6177 8.09467C13.7584 7.95402 13.9492 7.875 14.1481 7.875H16.3981V4.875H14.1481C13.1535 4.875 12.1997 5.27009 11.4964 5.97335C10.7932 6.67661 10.3981 7.63044 10.3981 8.625V10.1325H8.89807L8.60107 13.1175H10.3981V19.125Z" fill="#606775"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/lifeatmultilogin/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-helpjuice-element="Instagram Link" data-helpjuice-attributes="visibility,link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                                <g clip-path="url(#clip0_1163_495)">
+                                <path d="M15.1693 11.9984C15.1693 11.3815 14.9554 10.7836 14.564 10.3068C14.1726 9.82987 13.628 9.50344 13.0229 9.38308C12.4179 9.26272 11.7898 9.35587 11.2457 9.64667C10.7016 9.93747 10.2752 10.4079 10.039 10.9779C9.80293 11.5478 9.77173 12.182 9.95076 12.7724C10.1298 13.3628 10.508 13.8728 11.0209 14.2156C11.5338 14.5584 12.1497 14.7128 12.7637 14.6524C13.3777 14.592 13.9517 14.3206 14.388 13.8844C14.6356 13.645 14.8325 13.3582 14.9667 13.041C15.101 12.7238 15.1699 12.3828 15.1693 12.0384L15.1687 11.9964L15.1693 11.9984ZM16.6093 11.9984C16.6061 12.944 16.2754 13.8594 15.6733 14.5886C15.0712 15.3178 14.2351 15.8158 13.3071 15.998C12.3792 16.1801 11.4168 16.0351 10.5838 15.5876C9.75072 15.14 9.09849 14.4177 8.73807 13.5434C8.37765 12.6691 8.33132 11.697 8.60696 10.7924C8.88259 9.88783 9.46317 9.10671 10.2499 8.58198C11.0366 8.05726 11.9808 7.82135 12.9219 7.91441C13.8629 8.00748 14.7426 8.42375 15.4113 9.0924C15.7911 9.46088 16.0929 9.90193 16.2988 10.3894C16.5047 10.8768 16.6105 11.4006 16.61 11.9297L16.6093 12.0024V11.9984ZM17.734 7.72774V7.72907C17.7341 7.95118 17.6571 8.16643 17.5163 8.33817C17.3754 8.5099 17.1794 8.62748 16.9616 8.67088C16.7437 8.71428 16.5176 8.6808 16.3217 8.57616C16.1258 8.47151 15.9722 8.30218 15.8872 8.097C15.8021 7.89183 15.7908 7.66351 15.8553 7.45095C15.9197 7.23839 16.0558 7.05475 16.2405 6.93131C16.4251 6.80786 16.6468 6.75227 16.8679 6.77398C17.0889 6.7957 17.2956 6.89339 17.4527 7.0504C17.6233 7.21774 17.7293 7.45107 17.7293 7.70907V7.7284L17.734 7.72774ZM12.5073 5.4344L11.7107 5.42907C11.228 5.42551 10.8616 5.42551 10.6113 5.42907C10.3611 5.43263 10.026 5.44307 9.606 5.4604C9.216 5.47374 8.846 5.5124 8.484 5.57374L8.53267 5.56707C8.24933 5.61374 7.998 5.6804 7.75733 5.76907L7.786 5.75974C7.446 5.89641 7.13682 6.09979 6.87668 6.35787C6.61654 6.61595 6.41071 6.9235 6.27133 7.2624L6.26467 7.2804C6.1791 7.51461 6.11571 7.75634 6.07533 8.0024L6.072 8.02707C6.0127 8.37737 5.97729 8.7313 5.966 9.0864L5.96533 9.1004C5.948 9.52085 5.93756 9.85596 5.934 10.1057C5.93044 10.3555 5.93044 10.722 5.934 11.2051C5.93756 11.6882 5.93933 11.9537 5.93933 12.0017C5.93933 12.0497 5.93756 12.3153 5.934 12.7984C5.93044 13.2815 5.93044 13.648 5.934 13.8977C5.93756 14.1475 5.948 14.4826 5.96533 14.9031C5.97867 15.2931 6.01733 15.6631 6.07867 16.0251L6.072 15.9764C6.11867 16.2597 6.18533 16.5111 6.274 16.7517L6.26467 16.7231C6.40134 17.0631 6.60472 17.3723 6.8628 17.6324C7.12088 17.8925 7.42843 18.0984 7.76733 18.2377L7.78533 18.2444C7.99733 18.3237 8.24867 18.3904 8.50733 18.4337L8.532 18.4371C8.84467 18.4917 9.21467 18.5304 9.59067 18.5431L9.60467 18.5437C10.0251 18.5611 10.3602 18.5715 10.61 18.5751C10.8598 18.5786 11.2262 18.5786 11.7093 18.5751L12.5013 18.5591L13.298 18.5644C13.7807 18.568 14.1471 18.568 14.3973 18.5644C14.6476 18.5609 14.9827 18.5504 15.4027 18.5331C15.7927 18.5197 16.1627 18.4811 16.5247 18.4197L16.476 18.4264C16.7593 18.3797 17.0107 18.3131 17.2513 18.2244L17.2227 18.2337C17.5627 18.0971 17.8718 17.8937 18.132 17.6356C18.3921 17.3775 18.598 17.07 18.7373 16.7311L18.744 16.7131C18.8233 16.5011 18.89 16.2497 18.9333 15.9911L18.9367 15.9664C18.9913 15.6537 19.03 15.2837 19.0427 14.9077L19.0433 14.8937C19.0607 14.4733 19.0711 14.1382 19.0747 13.8884C19.0782 13.6386 19.0782 13.2722 19.0747 12.7891C19.0711 12.306 19.0693 12.0404 19.0693 11.9924C19.0693 11.9444 19.0711 11.6788 19.0747 11.1957C19.0782 10.7126 19.0782 10.3462 19.0747 10.0964C19.0711 9.84663 19.0607 9.51151 19.0433 9.09107C19.03 8.70107 18.9913 8.33107 18.93 7.96907L18.9367 8.01774C18.8944 7.75341 18.8267 7.49376 18.7347 7.2424L18.744 7.27107C18.6073 6.93107 18.4039 6.62189 18.1459 6.36175C17.8878 6.10161 17.5802 5.89578 17.2413 5.7564L17.2233 5.74974C16.9891 5.66417 16.7474 5.60078 16.5013 5.5604L16.4767 5.55707C16.1266 5.49781 15.7729 5.46239 15.418 5.45107L15.404 5.4504C14.9836 5.43307 14.6484 5.42263 14.3987 5.41907C14.1489 5.41551 13.7824 5.41551 13.2993 5.41907L12.5073 5.4344ZM20.5027 11.9984C20.5027 13.5886 20.4849 14.6893 20.4493 15.3004C20.4808 15.9197 20.3819 16.5388 20.1589 17.1174C19.9358 17.696 19.5937 18.2213 19.1547 18.6593C18.7157 19.0972 18.1895 19.4381 17.6104 19.6597C17.0312 19.8813 16.4119 19.9788 15.7927 19.9457L15.8033 19.9464C15.1922 19.982 14.0916 19.9997 12.5013 19.9997C10.9111 19.9997 9.81044 19.982 9.19933 19.9464C8.58001 19.9779 7.96098 19.879 7.38235 19.6559C6.80372 19.4329 6.27841 19.0908 5.84045 18.6518C5.40249 18.2127 5.06166 17.6866 4.84005 17.1074C4.61843 16.5283 4.52098 15.909 4.554 15.2897L4.55333 15.3004C4.51778 14.6893 4.5 13.5886 4.5 11.9984C4.5 10.4082 4.51778 9.30751 4.55333 8.6964C4.52182 8.07708 4.62078 7.45805 4.84381 6.87942C5.06683 6.30079 5.40894 5.77548 5.84797 5.33752C6.287 4.89956 6.81314 4.55873 7.39231 4.33712C7.97149 4.1155 8.59076 4.01805 9.21 4.05107L9.19933 4.0504C9.81044 4.01485 10.9111 3.99707 12.5013 3.99707C14.0916 3.99707 15.1922 4.01485 15.8033 4.0504C16.4227 4.01889 17.0417 4.11785 17.6203 4.34088C18.1989 4.5639 18.7243 4.90601 19.1622 5.34504C19.6002 5.78407 19.941 6.31021 20.1626 6.88938C20.3842 7.46856 20.4817 8.08783 20.4487 8.70707L20.4493 8.6964C20.4849 9.30707 20.5027 10.4077 20.5027 11.9984Z" fill="#606775"></path>
+                                </g>
+                                <defs>
+                                <clippath id="clip0_1163_495">
+                                <rect width="16" height="16" fill="white" transform="translate(4.5 4)"></rect>
+                                </clippath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/multilogin_chat" target="_blank" rel="noopener noreferrer" aria-label="Telegram" data-helpjuice-element="Telegram Link" data-helpjuice-attributes="visibility,link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                                <g clip-path="url(#clip0_1163_498)">
+                                <path d="M19.2011 5.4138L5.02585 10.9084C4.45541 11.1642 4.26248 11.6766 4.88798 11.9547L8.52454 13.1164L17.3173 7.65421C17.7974 7.3113 18.2889 7.40274 17.8659 7.77996L10.3142 14.6529L10.0769 17.5616C10.2967 18.0107 10.699 18.0127 10.9556 17.7895L13.0449 15.8024L16.6232 18.4957C17.4543 18.9903 17.9065 18.6711 18.0853 17.7647L20.4324 6.59371C20.676 5.47793 20.2605 4.9863 19.2011 5.4138Z" fill="#606775"></path>
+                                </g>
+                                <defs>
+                                <clippath id="clip0_1163_498">
+                                <rect width="16" height="16" fill="white" transform="translate(4.5 4)"></rect>
+                                </clippath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/multilogin_en" target="_blank" rel="noopener noreferrer" aria-label="Twitter" data-helpjuice-element="Twitter Link" data-helpjuice-attributes="visibility,link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                                <path d="M18.8356 17.7347L14.5465 10.9988L18.7456 6.37992C18.8929 6.21383 18.9688 5.99636 18.9569 5.77466C18.945 5.55296 18.8461 5.34489 18.6818 5.19557C18.5175 5.04624 18.301 4.9677 18.0792 4.97697C17.8573 4.98624 17.6481 5.08257 17.4968 5.24508L13.6106 9.52289L10.9606 5.35969C10.8844 5.23994 10.7793 5.14134 10.6549 5.07301C10.5305 5.00467 10.3909 4.96882 10.249 4.96875H6.87399C6.72285 4.96882 6.5745 5.00949 6.44444 5.0865C6.31439 5.16352 6.20742 5.27406 6.1347 5.40656C6.06198 5.53906 6.02619 5.68866 6.03107 5.83973C6.03595 5.9908 6.08131 6.13778 6.16243 6.26531L10.4515 13.0013L6.24962 17.6201C6.17354 17.7018 6.11444 17.7978 6.07574 17.9025C6.03704 18.0073 6.01951 18.1187 6.02417 18.2302C6.02883 18.3418 6.05559 18.4513 6.10289 18.5524C6.15019 18.6536 6.21709 18.7443 6.29972 18.8194C6.38235 18.8945 6.47907 18.9524 6.58426 18.9899C6.68945 19.0273 6.80102 19.0435 6.91251 19.0375C7.02401 19.0315 7.1332 19.0035 7.23377 18.9549C7.33433 18.9064 7.42427 18.8384 7.49837 18.7549L11.3874 14.4771L14.0374 18.6403C14.1136 18.7601 14.2187 18.8587 14.3431 18.927C14.4675 18.9953 14.6071 19.0312 14.749 19.0312H18.124C18.2751 19.0312 18.4235 18.9905 18.5535 18.9135C18.6836 18.8365 18.7906 18.7259 18.8633 18.5934C18.936 18.4609 18.9718 18.3113 18.9669 18.1603C18.962 18.0092 18.9167 17.8622 18.8356 17.7347ZM15.2124 17.3438L8.41102 6.65625H9.78563L16.587 17.3438H15.2124Z" fill="#606775"></path>
+                            </svg>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/c/Multilogin" target="_blank" rel="noopener noreferrer" aria-label="Youtube" data-helpjuice-element="Youtube Link" data-helpjuice-attributes="visibility,link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                                <g clip-path="url(#clip0_1163_504)">
+                                <path d="M12.6145 18.375C10.5919 18.3107 8.66847 18.2608 6.74503 18.1858C6.33059 18.1679 5.90906 18.1037 5.50525 18.0073C4.74721 17.8287 4.22296 17.3681 3.95375 16.6148C3.73767 16.0078 3.65974 15.383 3.60307 14.7475C3.47909 13.255 3.47909 11.7627 3.53931 10.2702C3.57473 9.42764 3.59598 8.57789 3.81914 7.76027C3.95375 7.27113 4.11669 6.7927 4.50988 6.43924C4.92432 6.06435 5.40961 5.83941 5.9622 5.81442C7.47828 5.73944 8.99081 5.64661 10.5069 5.63233C12.5473 5.61091 14.5911 5.63947 16.6315 5.67875C17.5135 5.6966 18.4025 5.74301 19.2775 5.85727C20.078 5.96438 20.6767 6.41424 20.9955 7.19972C21.2399 7.80312 21.332 8.43508 21.3851 9.07774C21.5233 10.688 21.5268 12.2982 21.4489 13.9084C21.4099 14.7261 21.3709 15.5473 21.1407 16.3435C20.8786 17.2575 20.3224 17.8609 19.3944 18.0679C19.033 18.1465 18.6576 18.1751 18.2892 18.1894C16.3622 18.2572 14.4388 18.3179 12.6145 18.375ZM10.6557 14.3155C12.271 13.4729 13.8685 12.6374 15.4979 11.7841C13.8721 10.9272 12.2745 10.0882 10.6557 9.23484C10.6557 10.9379 10.6557 12.6124 10.6557 14.3155Z" fill="#606775"></path>
+                                </g>
+                                <defs>
+                                <clippath id="clip0_1163_504">
+                                <rect width="18" height="12.75" fill="white" transform="translate(3.5 5.625)"></rect>
+                                </clippath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <img class="footer-water-mark" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Vector.png" alt="Multilogin abstract watermark" data-helpjuice-element="Footer Water Mark" data-helpjuice-attributes="visibility,image">
+    </footer>
+    <!--END_COMPONENT_FOOTER-->
+    
+    <!--START_COMPONENT_FOOTER_MOBILE-->
+    <footer class="footer-mobile footer-two footer-mobile-inner" data-helpjuice-component="Footer Mobile" data-helpjuice-element="Container" data-helpjuice-attributes="background">
+        <ul class="Socials">
+            <li>
+                <a href="https://www.linkedin.com/company/multilogin/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" data-helpjuice-element="Linkedin Link" data-helpjuice-attributes="visibility,link">
+                    <svg width="32" height="31" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                        <path d="M9.15967 17.849H6.65967V9.51562H9.15967V17.849ZM18.3263 17.849H15.8263V13.3973C15.8263 12.2373 15.413 11.6598 14.5938 11.6598C13.9447 11.6598 13.533 11.9831 13.3263 12.6306V17.849H10.8263C10.8263 17.849 10.8597 10.349 10.8263 9.51562H12.7997L12.9522 11.1823H13.0038C13.5163 10.349 14.3355 9.78396 15.4588 9.78396C16.313 9.78396 17.0038 10.0215 17.5313 10.6181C18.0622 11.2156 18.3263 12.0173 18.3263 13.1431V17.849Z" fill="#606775"></path>
+                        <path d="M7.92448 8.68164C8.63785 8.68164 9.21615 8.122 9.21615 7.43164C9.21615 6.74128 8.63785 6.18164 7.92448 6.18164C7.21111 6.18164 6.63281 6.74128 6.63281 7.43164C6.63281 8.122 7.21111 8.68164 7.92448 8.68164Z" fill="#606775"></path>
+                    </svg>
+
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/Multilogin-126072544645572/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-helpjuice-element="Facebook Link" data-helpjuice-attributes="visibility,link">
+                    <svg width="32" height="31" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                        <path d="M10.3981 19.125H13.3981V13.1175H16.1011L16.3981 10.1325H13.3981V8.625C13.3981 8.42609 13.4771 8.23532 13.6177 8.09467C13.7584 7.95402 13.9492 7.875 14.1481 7.875H16.3981V4.875H14.1481C13.1535 4.875 12.1997 5.27009 11.4964 5.97335C10.7932 6.67661 10.3981 7.63044 10.3981 8.625V10.1325H8.89807L8.60107 13.1175H10.3981V19.125Z" fill="#606775"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/lifeatmultilogin/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-helpjuice-element="Instagram Link" data-helpjuice-attributes="visibility,link">
+                    <svg width="32" height="31" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                        <g clip-path="url(#clip0_1163_495)">
+                        <path d="M15.1693 11.9984C15.1693 11.3815 14.9554 10.7836 14.564 10.3068C14.1726 9.82987 13.628 9.50344 13.0229 9.38308C12.4179 9.26272 11.7898 9.35587 11.2457 9.64667C10.7016 9.93747 10.2752 10.4079 10.039 10.9779C9.80293 11.5478 9.77173 12.182 9.95076 12.7724C10.1298 13.3628 10.508 13.8728 11.0209 14.2156C11.5338 14.5584 12.1497 14.7128 12.7637 14.6524C13.3777 14.592 13.9517 14.3206 14.388 13.8844C14.6356 13.645 14.8325 13.3582 14.9667 13.041C15.101 12.7238 15.1699 12.3828 15.1693 12.0384L15.1687 11.9964L15.1693 11.9984ZM16.6093 11.9984C16.6061 12.944 16.2754 13.8594 15.6733 14.5886C15.0712 15.3178 14.2351 15.8158 13.3071 15.998C12.3792 16.1801 11.4168 16.0351 10.5838 15.5876C9.75072 15.14 9.09849 14.4177 8.73807 13.5434C8.37765 12.6691 8.33132 11.697 8.60696 10.7924C8.88259 9.88783 9.46317 9.10671 10.2499 8.58198C11.0366 8.05726 11.9808 7.82135 12.9219 7.91441C13.8629 8.00748 14.7426 8.42375 15.4113 9.0924C15.7911 9.46088 16.0929 9.90193 16.2988 10.3894C16.5047 10.8768 16.6105 11.4006 16.61 11.9297L16.6093 12.0024V11.9984ZM17.734 7.72774V7.72907C17.7341 7.95118 17.6571 8.16643 17.5163 8.33817C17.3754 8.5099 17.1794 8.62748 16.9616 8.67088C16.7437 8.71428 16.5176 8.6808 16.3217 8.57616C16.1258 8.47151 15.9722 8.30218 15.8872 8.097C15.8021 7.89183 15.7908 7.66351 15.8553 7.45095C15.9197 7.23839 16.0558 7.05475 16.2405 6.93131C16.4251 6.80786 16.6468 6.75227 16.8679 6.77398C17.0889 6.7957 17.2956 6.89339 17.4527 7.0504C17.6233 7.21774 17.7293 7.45107 17.7293 7.70907V7.7284L17.734 7.72774ZM12.5073 5.4344L11.7107 5.42907C11.228 5.42551 10.8616 5.42551 10.6113 5.42907C10.3611 5.43263 10.026 5.44307 9.606 5.4604C9.216 5.47374 8.846 5.5124 8.484 5.57374L8.53267 5.56707C8.24933 5.61374 7.998 5.6804 7.75733 5.76907L7.786 5.75974C7.446 5.89641 7.13682 6.09979 6.87668 6.35787C6.61654 6.61595 6.41071 6.9235 6.27133 7.2624L6.26467 7.2804C6.1791 7.51461 6.11571 7.75634 6.07533 8.0024L6.072 8.02707C6.0127 8.37737 5.97729 8.7313 5.966 9.0864L5.96533 9.1004C5.948 9.52085 5.93756 9.85596 5.934 10.1057C5.93044 10.3555 5.93044 10.722 5.934 11.2051C5.93756 11.6882 5.93933 11.9537 5.93933 12.0017C5.93933 12.0497 5.93756 12.3153 5.934 12.7984C5.93044 13.2815 5.93044 13.648 5.934 13.8977C5.93756 14.1475 5.948 14.4826 5.96533 14.9031C5.97867 15.2931 6.01733 15.6631 6.07867 16.0251L6.072 15.9764C6.11867 16.2597 6.18533 16.5111 6.274 16.7517L6.26467 16.7231C6.40134 17.0631 6.60472 17.3723 6.8628 17.6324C7.12088 17.8925 7.42843 18.0984 7.76733 18.2377L7.78533 18.2444C7.99733 18.3237 8.24867 18.3904 8.50733 18.4337L8.532 18.4371C8.84467 18.4917 9.21467 18.5304 9.59067 18.5431L9.60467 18.5437C10.0251 18.5611 10.3602 18.5715 10.61 18.5751C10.8598 18.5786 11.2262 18.5786 11.7093 18.5751L12.5013 18.5591L13.298 18.5644C13.7807 18.568 14.1471 18.568 14.3973 18.5644C14.6476 18.5609 14.9827 18.5504 15.4027 18.5331C15.7927 18.5197 16.1627 18.4811 16.5247 18.4197L16.476 18.4264C16.7593 18.3797 17.0107 18.3131 17.2513 18.2244L17.2227 18.2337C17.5627 18.0971 17.8718 17.8937 18.132 17.6356C18.3921 17.3775 18.598 17.07 18.7373 16.7311L18.744 16.7131C18.8233 16.5011 18.89 16.2497 18.9333 15.9911L18.9367 15.9664C18.9913 15.6537 19.03 15.2837 19.0427 14.9077L19.0433 14.8937C19.0607 14.4733 19.0711 14.1382 19.0747 13.8884C19.0782 13.6386 19.0782 13.2722 19.0747 12.7891C19.0711 12.306 19.0693 12.0404 19.0693 11.9924C19.0693 11.9444 19.0711 11.6788 19.0747 11.1957C19.0782 10.7126 19.0782 10.3462 19.0747 10.0964C19.0711 9.84663 19.0607 9.51151 19.0433 9.09107C19.03 8.70107 18.9913 8.33107 18.93 7.96907L18.9367 8.01774C18.8944 7.75341 18.8267 7.49376 18.7347 7.2424L18.744 7.27107C18.6073 6.93107 18.4039 6.62189 18.1459 6.36175C17.8878 6.10161 17.5802 5.89578 17.2413 5.7564L17.2233 5.74974C16.9891 5.66417 16.7474 5.60078 16.5013 5.5604L16.4767 5.55707C16.1266 5.49781 15.7729 5.46239 15.418 5.45107L15.404 5.4504C14.9836 5.43307 14.6484 5.42263 14.3987 5.41907C14.1489 5.41551 13.7824 5.41551 13.2993 5.41907L12.5073 5.4344ZM20.5027 11.9984C20.5027 13.5886 20.4849 14.6893 20.4493 15.3004C20.4808 15.9197 20.3819 16.5388 20.1589 17.1174C19.9358 17.696 19.5937 18.2213 19.1547 18.6593C18.7157 19.0972 18.1895 19.4381 17.6104 19.6597C17.0312 19.8813 16.4119 19.9788 15.7927 19.9457L15.8033 19.9464C15.1922 19.982 14.0916 19.9997 12.5013 19.9997C10.9111 19.9997 9.81044 19.982 9.19933 19.9464C8.58001 19.9779 7.96098 19.879 7.38235 19.6559C6.80372 19.4329 6.27841 19.0908 5.84045 18.6518C5.40249 18.2127 5.06166 17.6866 4.84005 17.1074C4.61843 16.5283 4.52098 15.909 4.554 15.2897L4.55333 15.3004C4.51778 14.6893 4.5 13.5886 4.5 11.9984C4.5 10.4082 4.51778 9.30751 4.55333 8.6964C4.52182 8.07708 4.62078 7.45805 4.84381 6.87942C5.06683 6.30079 5.40894 5.77548 5.84797 5.33752C6.287 4.89956 6.81314 4.55873 7.39231 4.33712C7.97149 4.1155 8.59076 4.01805 9.21 4.05107L9.19933 4.0504C9.81044 4.01485 10.9111 3.99707 12.5013 3.99707C14.0916 3.99707 15.1922 4.01485 15.8033 4.0504C16.4227 4.01889 17.0417 4.11785 17.6203 4.34088C18.1989 4.5639 18.7243 4.90601 19.1622 5.34504C19.6002 5.78407 19.941 6.31021 20.1626 6.88938C20.3842 7.46856 20.4817 8.08783 20.4487 8.70707L20.4493 8.6964C20.4849 9.30707 20.5027 10.4077 20.5027 11.9984Z" fill="#606775"></path>
+                        </g>
+                        <defs>
+                        <clippath id="clip0_1163_495">
+                        <rect width="16" height="16" fill="white" transform="translate(4.5 4)"></rect>
+                        </clippath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://t.me/multilogin_chat" target="_blank" rel="noopener noreferrer" aria-label="Telegram" data-helpjuice-element="Telegram Link" data-helpjuice-attributes="visibility,link">
+                    <svg width="32" height="31" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                        <g clip-path="url(#clip0_1163_498)">
+                        <path d="M19.2011 5.4138L5.02585 10.9084C4.45541 11.1642 4.26248 11.6766 4.88798 11.9547L8.52454 13.1164L17.3173 7.65421C17.7974 7.3113 18.2889 7.40274 17.8659 7.77996L10.3142 14.6529L10.0769 17.5616C10.2967 18.0107 10.699 18.0127 10.9556 17.7895L13.0449 15.8024L16.6232 18.4957C17.4543 18.9903 17.9065 18.6711 18.0853 17.7647L20.4324 6.59371C20.676 5.47793 20.2605 4.9863 19.2011 5.4138Z" fill="#606775"></path>
+                        </g>
+                        <defs>
+                        <clippath id="clip0_1163_498">
+                        <rect width="16" height="16" fill="white" transform="translate(4.5 4)"></rect>
+                        </clippath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/multilogin_en" target="_blank" rel="noopener noreferrer" aria-label="Twitter" data-helpjuice-element="Twitter Link" data-helpjuice-attributes="visibility,link">
+                    <svg width="32" height="31" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                        <path d="M18.8356 17.7347L14.5465 10.9988L18.7456 6.37992C18.8929 6.21383 18.9688 5.99636 18.9569 5.77466C18.945 5.55296 18.8461 5.34489 18.6818 5.19557C18.5175 5.04624 18.301 4.9677 18.0792 4.97697C17.8573 4.98624 17.6481 5.08257 17.4968 5.24508L13.6106 9.52289L10.9606 5.35969C10.8844 5.23994 10.7793 5.14134 10.6549 5.07301C10.5305 5.00467 10.3909 4.96882 10.249 4.96875H6.87399C6.72285 4.96882 6.5745 5.00949 6.44444 5.0865C6.31439 5.16352 6.20742 5.27406 6.1347 5.40656C6.06198 5.53906 6.02619 5.68866 6.03107 5.83973C6.03595 5.9908 6.08131 6.13778 6.16243 6.26531L10.4515 13.0013L6.24962 17.6201C6.17354 17.7018 6.11444 17.7978 6.07574 17.9025C6.03704 18.0073 6.01951 18.1187 6.02417 18.2302C6.02883 18.3418 6.05559 18.4513 6.10289 18.5524C6.15019 18.6536 6.21709 18.7443 6.29972 18.8194C6.38235 18.8945 6.47907 18.9524 6.58426 18.9899C6.68945 19.0273 6.80102 19.0435 6.91251 19.0375C7.02401 19.0315 7.1332 19.0035 7.23377 18.9549C7.33433 18.9064 7.42427 18.8384 7.49837 18.7549L11.3874 14.4771L14.0374 18.6403C14.1136 18.7601 14.2187 18.8587 14.3431 18.927C14.4675 18.9953 14.6071 19.0312 14.749 19.0312H18.124C18.2751 19.0312 18.4235 18.9905 18.5535 18.9135C18.6836 18.8365 18.7906 18.7259 18.8633 18.5934C18.936 18.4609 18.9718 18.3113 18.9669 18.1603C18.962 18.0092 18.9167 17.8622 18.8356 17.7347ZM15.2124 17.3438L8.41102 6.65625H9.78563L16.587 17.3438H15.2124Z" fill="#606775"></path>
+                    </svg>
+
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/c/Multilogin" target="_blank" rel="noopener noreferrer" aria-label="Youtube" data-helpjuice-element="Youtube Link" data-helpjuice-attributes="visibility,link">
+                    <svg width="32" height="31" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" width="24" height="24" rx="2" fill="#EEEEEE"></rect>
+                        <g clip-path="url(#clip0_1163_504)">
+                        <path d="M12.6145 18.375C10.5919 18.3107 8.66847 18.2608 6.74503 18.1858C6.33059 18.1679 5.90906 18.1037 5.50525 18.0073C4.74721 17.8287 4.22296 17.3681 3.95375 16.6148C3.73767 16.0078 3.65974 15.383 3.60307 14.7475C3.47909 13.255 3.47909 11.7627 3.53931 10.2702C3.57473 9.42764 3.59598 8.57789 3.81914 7.76027C3.95375 7.27113 4.11669 6.7927 4.50988 6.43924C4.92432 6.06435 5.40961 5.83941 5.9622 5.81442C7.47828 5.73944 8.99081 5.64661 10.5069 5.63233C12.5473 5.61091 14.5911 5.63947 16.6315 5.67875C17.5135 5.6966 18.4025 5.74301 19.2775 5.85727C20.078 5.96438 20.6767 6.41424 20.9955 7.19972C21.2399 7.80312 21.332 8.43508 21.3851 9.07774C21.5233 10.688 21.5268 12.2982 21.4489 13.9084C21.4099 14.7261 21.3709 15.5473 21.1407 16.3435C20.8786 17.2575 20.3224 17.8609 19.3944 18.0679C19.033 18.1465 18.6576 18.1751 18.2892 18.1894C16.3622 18.2572 14.4388 18.3179 12.6145 18.375ZM10.6557 14.3155C12.271 13.4729 13.8685 12.6374 15.4979 11.7841C13.8721 10.9272 12.2745 10.0882 10.6557 9.23484C10.6557 10.9379 10.6557 12.6124 10.6557 14.3155Z" fill="#606775"></path>
+                        </g>
+                        <defs>
+                        <clippath id="clip0_1163_504">
+                        <rect width="18" height="12.75" fill="white" transform="translate(3.5 5.625)"></rect>
+                        </clippath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <ul class="footer-col">
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Antidetect Title" data-helpjuice-attributes="text,font_size,color">ANTIDETECT PLATFORM</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li><a href="https://multilogin.com/antidetect/antidetect-browser/" data-helpjuice-element="Antidetect browser Link" data-helpjuice-attributes="text,link,font_size,color">Antidetect browser</a></li>
+                    <li><a href="https://multilogin.com/gateway/residential-proxies/" data-helpjuice-element="Residential proxies Link" data-helpjuice-attributes="text,link,font_size,color">Residential proxies</a></li>                        
+                    <li><a href="https://multilogin.com/mobile-antidetect-browser/" data-helpjuice-element="Mobile antidetect browser Link" data-helpjuice-attributes="text,link,font_size,color">Mobile antidetect browser</a></li>
+                    <li><a href="https://multilogin.com/multi-account-management/" data-helpjuice-element="Multi-account management Link" data-helpjuice-attributes="text,link,font_size,color">Multi-account management</a></li>                        
+                    <li><a href="https://multilogin.com/headless-browser/" data-helpjuice-element="Headless browser Link" data-helpjuice-attributes="text,link,font_size,color">Headless browser</a></li>
+                    <li><a href="https://multilogin.com/antidetect/web-automation/" data-helpjuice-element="Web automation Link" data-helpjuice-attributes="text,link,font_size,color">Web automation</a></li>
+                    <li><a href="https://multilogin.com/web-automation/ai-quick-actions/" data-helpjuice-element="AI Quick Action Automation Link" data-helpjuice-attributes="text,link,font_size,color">AI Quick Action Automation</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Multi-account Management Title" data-helpjuice-attributes="text,font_size,color">MULTI-ACCOUNTING</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-facebook-accounts/" data-helpjuice-element="Multiple Facebook accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Facebook accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-gmail-accounts/" data-helpjuice-element="Multiple Gmail accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Gmail accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-linkedin-accounts/" data-helpjuice-element="Multiple LinkedIn accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple LinkedIn accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-amazon-accounts/" data-helpjuice-element="Multiple Amazon accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Amazon accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-onlyfans-accounts/" data-helpjuice-element="Multiple Onlyfans accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Onlyfans accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-twitter-accounts/" data-helpjuice-element="Multiple Twitter accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple Twitter accounts</a></li>
+                    <li><a href="https://multilogin.com/multiple-accounting/create-multiple-tiktok-accounts/" data-helpjuice-element="Multiple TikTok accounts Link" data-helpjuice-attributes="text,link,font_size,color">Create multiple TikTok accounts</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Geo Proxies Title" data-helpjuice-attributes="text,font_size,color">GEO PROXIES</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li><a href="https://multilogin.com/gateway/uk-proxy-and-antidetect-bundle/" data-helpjuice-element="UK proxy Link" data-helpjuice-attributes="text,link,font_size,color">UK proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/usa-proxy-and-antidetect-bundle/" data-helpjuice-element="USA proxy Link" data-helpjuice-attributes="text,link,font_size,color">USA proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/japan-proxy-and-antidetect-bundle/" data-helpjuice-element="Japan proxy Link" data-helpjuice-attributes="text,link,font_size,color">Japan proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/india-proxy-untidetect-browser/" data-helpjuice-element="India proxy Link" data-helpjuice-attributes="text,link,font_size,color">India proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/pakistan-proxy-and-antidetect-browser/" data-helpjuice-element="Pakistan proxy Link" data-helpjuice-attributes="text,link,font_size,color">Pakistan proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/china-proxy-and-antidetect-bundle/" data-helpjuice-element="China proxy Link" data-helpjuice-attributes="text,link,font_size,color">China proxy</a></li>
+                    <li><a href="https://multilogin.com/gateway/new-zealand-proxy-and-antidetect-browser/" data-helpjuice-element="New Zealand proxy Link" data-helpjuice-attributes="text,link,font_size,color">New Zealand proxy</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Resources Title" data-helpjuice-attributes="text,font_size,color">RESOURCES</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li><a href="https://multilogin.com/help/en_US" data-helpjuice-element="Knowledge Base Link" data-helpjuice-attributes="text,link,font_size,color">Knowledge base</a></li>
+                    <li><a href="https://documenter.getpostman.com/view/28533318/2s946h9Cv9" data-helpjuice-element="API Documentation Link" data-helpjuice-attributes="text,link,font_size,color">API documentation</a></li>
+                    <li><a href="https://multilogin.com/glossary/" data-helpjuice-element="Glossary Link" data-helpjuice-attributes="text,link,font_size,color">Glossary</a></li>
+                    <li><a href="https://multilogin.com/blog/" data-helpjuice-element="Blog Link" data-helpjuice-attributes="text,link,font_size,color">Blog</a></li>
+                    <li><a href="https://status.multilogin.com/" data-helpjuice-element="Server Status Link" data-helpjuice-attributes="text,link,font_size,color">Server status</a></li>
+                    <li><a href="https://multilogin.com/release-notes/" data-helpjuice-element="Release Notes Link" data-helpjuice-attributes="text,link,font_size,color">Release notes</a></li>                
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Comparison Title" data-helpjuice-attributes="text,font_size,color">COMPARISON</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-gologin/" data-helpjuice-element="MultiloginvsGologin Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Gologin</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-adspower/" data-helpjuice-element="MultiloginvsAdspower Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Adspower</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-dolphin-anty/" data-helpjuice-element="MultiloginvsDolphin Anty Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Dolphin Anty</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-incogniton/" data-helpjuice-element="MultiloginvsIncognition Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Incognition</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-octo-browser/" data-helpjuice-element="MultiloginvsOcto Browser Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Octo Browser</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-undetectable-io/" data-helpjuice-element="MultiloginvsUndetectable Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. Undetectable</a></li>
+                    <li><a href="https://multilogin.com/compare/multilogin-vs-morelogin/" data-helpjuice-element="MultiloginvsMoreLogin Link" data-helpjuice-attributes="text,link,font_size,color">Multilogin vs. MoreLogin</a></li>          
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Platform Proxies Title" data-helpjuice-attributes="text,font_size,color">PLATFORM PROXIES</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                        <li>
+                            <a href="https://multilogin.com/gateway/mobile-proxy-and-antidetect-browser/" data-helpjuice-element="Mobile proxy Link" data-helpjuice-attributes="text,link,font_size,color">Mobile proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/reddit-proxy-antidetect-bundle/" data-helpjuice-element="Reddit proxy Link" data-helpjuice-attributes="text,link,font_size,color">Reddit proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/facebook-proxy-and-antidetect-bundle/" data-helpjuice-element="Facebook proxy Link" data-helpjuice-attributes="text,link,font_size,color">Facebook proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/socks5-proxy-and-antidetect-browser/" data-helpjuice-element="SOCKS5 Link" data-helpjuice-attributes="text,link,font_size,color">SOCKS5 proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/instagram-proxy-and-antidetect-bundle/" data-helpjuice-element="Instagram proxy Link" data-helpjuice-attributes="text,link,font_size,color">Instagram proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/onlyfans-proxy-and-antidetect-browser/" data-helpjuice-element="Onlyfans proxy Link" data-helpjuice-attributes="text,link,font_size,color">Onlyfans proxy</a>
+                        </li>
+                        <li>
+                            <a href="https://multilogin.com/gateway/linkedin-proxy-and-antidetect-bundle/" data-helpjuice-element="LinkedIn proxy Link" data-helpjuice-attributes="text,link,font_size,color">LinkedIn proxy</a>
+                        </li>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Free Tools Title" data-helpjuice-attributes="text,font_size,color">FREE TOOLS</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li><a href="https://multilogin.com/online-url-to-text-converter/" data-helpjuice-element="Online URL to Text Converter Link" data-helpjuice-attributes="text,link,font_size,color">Online URL to text converter</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <h3 data-helpjuice-element="Get in Touch Title" data-helpjuice-attributes="text,font_size,color">GET IN TOUCH</h3><i class="fas fa-chevron-right"></i>
+                </div>
+                <ul class="inner-list-wrapper">
+                    <li>
+                        <span data-helpjuice-element="Contact Support Text" data-helpjuice-attributes="text,link,font_size,color">Contact 24/7 support</span><br>
+                        <a class="support-email" href="mailto:support@multilogin.com" data-helpjuice-element="Support Email" data-helpjuice-attributes="text,link,font_size,color">support@multilogin.com</a>
+                    </li>
+                    <li><a href="https://multilogin.com/contact-sales/" data-helpjuice-element="Contact Sales Link" data-helpjuice-attributes="text,link,font_size,color">Contact sales</a></li>
+                    <li><a href="https://multilogin.com/referral-program/" data-helpjuice-element="Referral Program Link" data-helpjuice-attributes="text,link,font_size,color">Referral program</a></li>
+                    <li><a href="https://multilogin.com/affiliate-program/" data-helpjuice-element="Affiliate Program Link" data-helpjuice-attributes="text,link,font_size,color">Affiliate program</a></li>
+                    <li><a href="https://multilogin.com/pricing/" data-helpjuice-element="Pricing Link" data-helpjuice-attributes="text,link,font_size,color">Pricing page</a></li>
+                    <li><a href="https://www.linkedin.com/company/eyesofwonder/" data-helpjuice-element="Careers Link" data-helpjuice-attributes="text,link,font_size,color">Careers</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="mobile-foot-water-mark">
+            <img class="footer-water-mark" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/Vector.png" alt="Multilogin abstract watermark" data-helpjuice-element="Footer Water Mark" data-helpjuice-attributes="visibility,image">
+        </div>
+        <ul class="Privacy-Termsofuse">
+            <li>
+                <a href="https://multilogin.com/privacy-policy/" data-helpjuice-element="Privacy policy Link" data-helpjuice-attributes="text,link,font_size,color">Privacy policy</a>
+            </li>
+            <li>
+                <a href="https://multilogin.com/terms-of-service/" data-helpjuice-element="Terms of service Link" data-helpjuice-attributes="text,link,font_size,color">Terms of service</a>
+            </li>
+            <li>
+                <a href="https://multilogin.com/cookie-policy/" data-helpjuice-element="Cookie policy Link" data-helpjuice-attributes="text,link,font_size,color">Cookie policy</a>
+            </li>
+        </ul>
+        <p class="copyright-text" data-helpjuice-element="Copyright Text" data-helpjuice-attributes="text,font_size,color">© 2026 Multilogin. All rights reserved.</p>
+    </footer>
+    <!--END_COMPONENT_FOOTER_MOBILE-->
+
+    <script defer="" type="text/javascript" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/jquery.selection.min.js.download"></script>
+    
+    <!-- To show URLs in iframe -->
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/template-ac5762484172e351a5f18410317060e84937bca7ebf92c7f499fc688f7706db6.js.download"></script>
+
+    <!-- Helpjuice JavaScript files -->
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/responsivemenu-86a17116950142b41426c04b0f042c7bcdf0519b7f4e7a9fe1e9d67b48f9b46b.js.download"></script>
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/jquery.typewatch-14c782b50fde070c995ed3582b19df3e16cd2bf989f259f7b82121913d6b7210.js.download"></script>
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/questions-5f7c86b585e58e01f6b6cb825fcb20b7c719be6b7aaa7b9f1f27cc29c5ae68c2.js.download"></script>
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/contactform-393ba587d203d199f34f03466f29c99af7d0cc9eb653a05c60d4977502eb9e89.js.download"></script>
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/follow_unfollow-0de54e775b4e5390a7dc74bfe49c89805ed38cd21e1907e00ac897803e04e987.js.download"></script>
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/decision_trees-ab5fc72b8dc6f02b58a0ab4bd3cd074a7d879215719c6505d1dd45df0bc112e6.js.download"></script>
+    <!--<script src="/theme.js"></script>-->
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/theme.js.download"></script><script type="text/javascript" id="" charset="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g+"?ref\x3dgtm2";d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","hnckyd0h4f");</script><script type="text/javascript" id="" charset="">window.clarity&&window.designVersion&&clarity("set","design_version",window.designVersion.toLowerCase());</script><script type="text/javascript" id="" charset="">window.clarity&&window.internalAccount!=null&&clarity("set","internal_account",String(window.internalAccount).toLowerCase());</script><script type="text/javascript" id="" charset="">(function(b,e,f,g,c,a,d){b[c]=b[c]||function(){(b[c].a=b[c].a||[]).push(arguments)};b[c].l=1*new Date;for(a=0;a<document.scripts.length;a++)if(document.scripts[a].src===g)return;a=e.createElement(f);d=e.getElementsByTagName(f)[0];a.async=1;a.src=g;d.parentNode.insertBefore(a,d)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id\x3d103615926","ym");ym(103615926,"init",{ssr:!0,webvisor:!0,clickmap:!0,ecommerce:"dataLayer",accurateTrackBounce:!0,trackLinks:!0});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103615926" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<script type="text/javascript" id="" charset="">(function(b,c,a,d,e){b[a]||(a=b[a]=function(){a.run?a.run.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=c.createElement(d),b.async=!0,b.src=e,c=c.getElementsByTagName(d)[0],c.parentNode.insertBefore(b,c))})(window,document,"tgp","script","https://telegram.org/js/pixel.js");tgp("init","C68956mP");</script>
+
+<script type="text/javascript" id="" charset="">(function(b,c,a,d,e){b[a]||(a=b[a]=function(){a.run?a.run.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=c.createElement(d),b.async=!0,b.src=e,c=c.getElementsByTagName(d)[0],c.parentNode.insertBefore(b,c))})(window,document,"tgp","script","https://telegram.org/js/pixel.js");tgp("init","OkZjf8lU");</script>
+
+<script type="text/javascript" id="" charset="">(function(b,c,a,d,e){b[a]||(a=b[a]=function(){a.run?a.run.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=c.createElement(d),b.async=!0,b.src=e,c=c.getElementsByTagName(d)[0],c.parentNode.insertBefore(b,c))})(window,document,"tgp","script","https://telegram.org/js/pixel.js");tgp("init","n0cm5HlS");</script>
+
+<script type="text/javascript" id="" charset="">(function(b,c,a,d,e){b[a]||(a=b[a]=function(){a.run?a.run.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=c.createElement(d),b.async=!0,b.src=e,c=c.getElementsByTagName(d)[0],c.parentNode.insertBefore(b,c))})(window,document,"tgp","script","https://telegram.org/js/pixel.js");tgp("init","3WqBi3Dn");</script>
+<script type="text/javascript" id="" charset="">document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("a, button").forEach(function(b){var a=b.textContent.trim().toUpperCase();a==="START TRIAL"&&b.addEventListener("click",function(){ym(103615926,"reachGoal","click_start_trial")});a.includes("TRY FOR")&&a.includes("1.99")&&b.addEventListener("click",function(){ym(103615926,"reachGoal","click_try_199")});a==="CHOOSE PLAN"&&(a=(a=b.closest("div[class], section"))?a.innerText:"",a.includes("PRO")&&!a.includes("BUSINESS")?
+b.addEventListener("click",function(){ym(103615926,"reachGoal","click_choose_plan_pro")}):a.includes("BUSINESS")&&b.addEventListener("click",function(){ym(103615926,"reachGoal","click_choose_plan_business")}))})});</script>
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/main_js_16296-8bb15cf3ee7fa0beb81f3850e5f7035ae453bdb03bb1026c07bd074623fa6de5.js.download"></script>
+    <div class="article-modal">
+        <div class="content">
+            <div class="sidebar">
+                <button class="close button">Close <i class="far fa-times"></i></button>
+                <a href="https://multilogin.com/help/en_US/quick-solutions-with-developer-tools/retrieving-folder-workspace-ids" class="expand button">Expand <i class="fas fa-expand"></i></a>
+            </div>
+            <div class="main-content fr-view">
+                <header>
+                    <h2 class="article-name"></h2>
+                </header>
+                <div class="body helpjuice-editor-content"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/highlight.min.js.download"></script>
+   
+    <!-- Start of LiveChat (www.livechat.com) code -->
+    <script>
+        window.__lc = window.__lc || {};
+        window.__lc.license = 14893845;
+        ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+    </script>
+    <noscript><a href="https://www.livechat.com/chat-with/14893845/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+    <!-- End of LiveChat code -->
+    
+
+    <script>
+         // Apply syntax highlighting to all code elements using Highlight.js
+          try {
+            hljs.highlightAll();
+          }catch(e){}
+    </script>
+    
+    <script>
+      const { hostname, pathname, search, hash } = location;
+      if (hostname !== 'multilogin.com') {
+        const target = `https://multilogin.com/help${pathname}${search}${hash}`;
+        // document.body.innerHTML = `<p style='margin: 5px 10px;'>Redirecting to <a href="${target}">${target}</a> or go back to the <a href='/'>Home Page<a/></p>`;
+        setTimeout(() => {
+          // location.replace(target);
+        }, 500);
+      }
+    </script>
+    
+  <script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/helpjuice-251a8e6285deaaa907a544c1c733033a8b824623c59dadcdb8bc6f725e0bfee9.js.download"></script><script src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/glossary-46fe931d51673faa23464c4f518fc7632816d8c5cb231f1a738a566c231cc8c4.js.download"></script><script defer="" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;872e7190104f4d7a89687bc5bd69ed17&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<div id="chat-widget-container" style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 0px; width: 84px; height: 84px; max-width: 100%; max-height: calc(100% + 0px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 0px; transition: none;"><iframe allow="clipboard-read; clipboard-write; autoplay; display-capture *;" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/open_chat.html" id="chat-widget" name="chat-widget" title="LiveChat chat widget" scrolling="no" style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: light; position: absolute; inset: 0px; transition: none !important; display: none; visibility: hidden;"></iframe><iframe id="chat-widget-minimized" name="chat-widget-minimized" title="LiveChat chat widget" scrolling="no" style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; color-scheme: light; display: block;" src="./How to get profile, folder, and workspace IDs in DevTools - Multilogin_files/saved_resource.html"></iframe><div aria-live="polite" id="lc-aria-announcer-polite" tabindex="-1" style="height: 1px; width: 1px; margin: -1px; overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; position: absolute;"></div><div aria-live="assertive" id="lc-aria-announcer-assertive" tabindex="-1" style="height: 1px; width: 1px; margin: -1px; overflow: hidden; white-space: nowrap; border: 0px; padding: 0px; position: absolute;"></div></div></body></html>
