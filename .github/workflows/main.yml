@@ -1,14 +1,12 @@
-name: Daily System Pulse (Randomized)
+name: Daily System Pulse
 
 permissions:
   contents: write
 
 on:
   schedule:
-    # Sếp cứ để cố định 01:00 AM UTC (khoảng 8h sáng VN) cho cả 8 repo cũng được
-    # Vì mình sẽ dùng Random Delay bên dưới để làm lệch giờ commit.
-    - cron: '0 1 * * *' 
-  workflow_dispatch: # Cho phép bấm chạy tay để test
+    - cron: '15 2 * * *'
+  workflow_dispatch:
 
 jobs:
   update-pulse:
@@ -17,24 +15,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Randomized Pulse Update
+      - name: Update Pulse Date (Absolute Safety)
         run: |
           python3 -c "
-          import datetime, re, time, random
-          
-          # 1. NGỦ NGẪU NHIÊN: Từ 1 đến 3600 giây (tối đa 1 tiếng)
-          # Giúp giờ commit trên GitHub không bao giờ trùng nhau
-          wait_time = random.randint(1, 3600)
-          print(f'Random delay: {wait_time} seconds...')
-          time.sleep(wait_time)
-          
-          # 2. ĐỌC VÀ SỬA FILE
+          import datetime, re
           with open('README.md', 'r', encoding='utf-8') as f:
               content = f.read()
           
+          # Lấy ngày hiện tại theo định dạng của Shields.io (dùng -- thay cho -)
           current_date = datetime.datetime.now().strftime('%Y--%m--%d')
           
-          # Tìm và thay thế chính xác link Badge Last_Pulse
+          # Chỉ thay thế phần ngày tháng trong link Badge Last_Pulse
+          # Nó tìm đúng cụm 'Last_Pulse-YYYY--MM--DD-blue' để thay
           new_content = re.sub(r'Last_Pulse-.*?-blue', f'Last_Pulse-{current_date}-blue', content)
           
           with open('README.md', 'w', encoding='utf-8') as f:
