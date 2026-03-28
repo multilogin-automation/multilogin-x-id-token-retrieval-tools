@@ -15,16 +15,28 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Update Pulse Date
+      - name: Update Pulse Date (Absolute Safety)
         run: |
-          CURRENT_DATE=$(date -u +"%Y-%m-%d")
-          # CHỐT HẠ: Chỉ thay thế nội dung nằm giữa 2 thẻ comment, KHÔNG đụng đến chỗ khác
-          sed -i "s/\(\).*\(\)/\1$CURRENT_DATE\2/g" README.md
+          python3 -c "
+          import datetime, re
+          with open('README.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+          
+          # Lấy ngày hiện tại theo định dạng của Shields.io (dùng -- thay cho -)
+          current_date = datetime.datetime.now().strftime('%Y--%m--%d')
+          
+          # Chỉ thay thế phần ngày tháng trong link Badge Last_Pulse
+          # Nó tìm đúng cụm 'Last_Pulse-YYYY--MM--DD-blue' để thay
+          new_content = re.sub(r'Last_Pulse-.*?-blue', f'Last_Pulse-{current_date}-blue', content)
+          
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          "
 
       - name: Commit and Push Changes
         run: |
           git config --local user.email "bot@adblogin.com"
           git config --local user.name "multilogin-automation-bot"
           git add README.md
-          git commit -m "chore: daily system pulse update $CURRENT_DATE [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: daily system pulse update $(date +'%Y-%m-%d') [skip ci]" || echo "No changes to commit"
           git push
