@@ -143,11 +143,11 @@ This repository provides concise, step-by-step guides and automation snippets fo
 
 ## Tutorials
 
-- `tutorials/how-to-get-profile-folder-workspace-ids-devtools.md`
-- `tutorials/how-to-find-user-id-in-devtools.md`
-- `tutorials/how-to-get-api-tokens-in-devtools.md`
-- `tutorials/multilogin-x-api-overview.md`
-- `tutorials/placeholder-3-missing-source.md`
+- [How to Get Profile, Folder, and Workspace IDs in DevTools](tutorials/how-to-get-profile-folder-workspace-ids-in-devtools.md)
+- [How to Find a User ID in DevTools](tutorials/how-to-find-user-id-in-devtools.md)
+- [How to Get API Tokens in DevTools](tutorials/how-to-get-api-tokens-in-devtools.md)
+- [Multilogin X API Overview](tutorials/multilogin-x-api-overview.md)
+- [Placeholder: Missing Source](tutorials/placeholder-3-missing-source.md)
 
 ## Snippets
 
