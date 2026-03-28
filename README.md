@@ -183,3 +183,8 @@ This repository provides concise, step-by-step guides and automation snippets fo
 - Multilogin best practices
 - Multilogin endpoint security
 
+---
+<p align="center">
+  <img src="https://img.shields.io/badge/System_Status-Online-brightgreen?style=flat-square" />
+  <img src="https://img.shields.io/badge/Last_Pulse-2026--03--28-blue?style=flat-square" />
+</p>
