@@ -1,11 +1,13 @@
-name: Daily System Pulse
+name: Daily System Pulse (Ultimate Stealth)
 
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: '15 2 * * *'
+    # Chạy rải rác trong các khung giờ khác nhau (0h, 4h, 8h, 12h, 16h, 20h UTC)
+    # Nhưng mỗi lần chạy, con Bot sẽ tự quyết định có "làm việc" hay không.
+    - cron: '0 */4 * * *' 
   workflow_dispatch:
 
 jobs:
@@ -15,28 +17,65 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Update Pulse Date (Absolute Safety)
+      - name: Randomized Pulse Logic
+        id: pulse_logic
         run: |
           python3 -c "
-          import datetime, re
+          import datetime, re, time, random, os
+          
+          # 1. TỶ LỆ LÀM VIỆC: Không phải ngày nào cũng commit. 
+          # Xác suất 70% làm việc, 30% nghỉ (nhìn rất giống người thật)
+          if random.random() < 0.3:
+              print('SKIP_WORK=true')
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write('skip_work=true\n')
+              exit(0)
+
+          # 2. DELAY NGẪU NHIÊN: Ngủ từ 1 phút đến 3 tiếng (10800 giây)
+          wait_time = random.randint(60, 10800)
+          print(f'Random delay: {wait_time}s')
+          time.sleep(wait_time)
+          
+          # 3. ĐỌC VÀ SỬA FILE
           with open('README.md', 'r', encoding='utf-8') as f:
               content = f.read()
           
-          # Lấy ngày hiện tại theo định dạng của Shields.io (dùng -- thay cho -)
           current_date = datetime.datetime.now().strftime('%Y--%m--%d')
           
-          # Chỉ thay thế phần ngày tháng trong link Badge Last_Pulse
-          # Nó tìm đúng cụm 'Last_Pulse-YYYY--MM--DD-blue' để thay
-          new_content = re.sub(r'Last_Pulse-.*?-blue', f'Last_Pulse-{current_date}-blue', content)
+          # 4. RANDOM COMMIT MESSAGE: Chọn 1 trong các câu lệnh chuyên nghiệp
+          messages = [
+              f'chore: daily system pulse update {current_date}',
+              f'docs: maintenance update {current_date}',
+              f'chore: system health check {current_date}',
+              'docs: minor documentation tweak',
+              f'refactor: update pulse metadata {current_date}'
+          ]
+          chosen_msg = random.choice(messages)
           
+          # 5. RANDOM HASH (Dấu vết ẩn): Thêm một comment ẩn ngẫu nhiên để thay đổi File Hash
+          # Điều này giúp file README luôn khác biệt hoàn toàn về mặt kỹ thuật
+          random_hash = hex(random.getrandbits(32))[2:]
+          content = re.sub(r'Last_Pulse-.*?-blue', f'Last_Pulse-{current_date}-blue', content)
+          
+          # Thêm/Cập nhật comment ẩn ở cuối file
+          pulse_comment = f'\n'
+          if '', pulse_comment.strip(), content)
+          else:
+              content += pulse_comment
+
           with open('README.md', 'w', encoding='utf-8') as f:
-              f.write(new_content)
+              f.write(content)
+          
+          # Xuất message ra cho step sau dùng
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'commit_msg={chosen_msg}\n')
           "
 
       - name: Commit and Push Changes
+        if: steps.pulse_logic.outputs.skip_work != 'true'
         run: |
           git config --local user.email "bot@adblogin.com"
           git config --local user.name "multilogin-automation-bot"
           git add README.md
-          git commit -m "chore: daily system pulse update $(date +'%Y-%m-%d') [skip ci]" || echo "No changes to commit"
+          git commit -m "${{ steps.pulse_logic.outputs.commit_msg }} [skip ci]" || echo "No changes"
           git push
