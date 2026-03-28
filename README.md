@@ -1,15 +1,15 @@
-# Ultimate Developer Resource for Multilogin X
+# 🚀 Partner Offers & Affiliate Discounts
 
-This repository is designed as a centralized hub for Multilogin X automation knowledge, including:
+**Get Multilogin with exclusive discounts!**
 
-- High-quality tutorial conversions from official Multilogin help pages
-- Production-ready `Python + Playwright` snippet examples via Multilogin X API (port `35000`)
-- Versioned reference workflows, incremental improvements, and sample pipelines
+- 🔗 [Buy Multilogin with 50% OFF (ADBNEW50)](https://adblogin.com/go/multilogin) — Use code: `ADBNEW50`
+- 🔗 [Buy Multilogin with 50% OFF (SAVE50)](https://adblogin.com/go/multilogin) — Use code: `SAVE50`
 
-## Partner Offer
+Share these codes with your team for the best deal on Multilogin.
 
-- 🔥 Use code: `ADBNEW50` for 50% OFF
-- 🌐 Visit: https://adblogin.com/go/multilogin
+# Quick solutions with Developer Tools
+
+Quick solutions with Developer Tools: easy guides to access tokens, IDs, and key info for faster, smoother Multilogin setup and troubleshooting.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ This repository is designed as a centralized hub for Multilogin X automation kno
 
 ## Introduction
 
-`multilogin-x-automation-handbook` translates official Multilogin help into developer-focused markdown and script references.
+This repository provides concise, step-by-step guides and automation snippets for Multilogin, focused on developer productivity and troubleshooting. All tutorials are in English, with images and code organized for easy reference.
 
 ## Tutorials
 

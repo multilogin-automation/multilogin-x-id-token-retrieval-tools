@@ -4,10 +4,15 @@ This guide will show you how to quickly retrieve your Multilogin user ID using y
 
 ---
 
+
 ## Overview
 - **Goal:** Retrieve your Multilogin user ID from the web app using DevTools.
 - **Tools Needed:** Any modern browser (Chrome, Edge, Firefox, etc.)
 - **Skill Level:** Beginner
+
+> **💡 Partner Offer:**
+> Get 50% OFF Multilogin with code `ADBNEW50` or `SAVE50`
+> 👉 [Buy with discount](https://adblogin.com/go/multilogin)
 
 ---
 

@@ -9,12 +9,17 @@ The Multilogin X API allows you to programmatically manage browser profiles, aut
 
 ---
 
+
 ## Authentication
 - **Bearer Token:** Most API requests require a Bearer Token for authentication.
 - **How to Get a Token:**
   - Sign in to the Multilogin X web app and extract the token from session storage (see the API token tutorial).
   - Tokens are valid for 30 minutes. Refresh with `POST /user/refresh_token`.
   - For higher rate limits and longer token lifetimes, use an automation token.
+
+> **💡 Partner Offer:**
+> Get 50% OFF Multilogin with code `ADBNEW50` or `SAVE50`
+> 👉 [Buy with discount](https://adblogin.com/go/multilogin)
 
 ---
 

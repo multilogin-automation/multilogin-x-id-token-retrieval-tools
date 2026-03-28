@@ -4,10 +4,15 @@ This tutorial shows you how to find your profile, folder, and workspace IDs in M
 
 ---
 
+
 ## Overview
 - **Goal:** Retrieve profile, folder, and workspace IDs from Multilogin.
 - **Tools Needed:** Any modern browser (Chrome, Edge, Firefox, etc.)
 - **Skill Level:** Beginner
+
+> **💡 Partner Offer:**
+> Get 50% OFF Multilogin with code `ADBNEW50` or `SAVE50`
+> 👉 [Buy with discount](https://adblogin.com/go/multilogin)
 
 ---
 

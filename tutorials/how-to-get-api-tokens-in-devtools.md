@@ -4,10 +4,15 @@ This tutorial explains how to quickly find your Multilogin API token using your 
 
 ---
 
+
 ## Overview
 - **Goal:** Retrieve your Multilogin API token from the web app using DevTools.
 - **Tools Needed:** Any modern browser (Chrome, Edge, Firefox, etc.)
 - **Skill Level:** Beginner
+
+> **💡 Partner Offer:**
+> Get 50% OFF Multilogin with code `ADBNEW50` or `SAVE50`
+> 👉 [Buy with discount](https://adblogin.com/go/multilogin)
 
 ---
 
