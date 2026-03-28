@@ -1,3 +1,53 @@
+# 🏆 Pro Tips from 20 Years of Multilogin Automation
+
+## Expert Advice & Real-World Lessons
+
+- **Always check API version compatibility.** Multilogin X changes endpoints and authentication flows frequently—read the changelog before updating scripts.
+- **Use a dedicated automation account** with limited permissions for scripts. Never use your main admin account for automation.
+- **Rotate tokens regularly** and never hardcode them in public repositories.
+- **Batch profile creation:** Use async requests and handle rate limits with exponential backoff.
+- **Profile backup/restore:** Script regular exports of profile configs and cookies for disaster recovery.
+- **Monitoring:** Set up scripts to check profile health/status and alert on failures (Slack, email, etc).
+- **Store tokens in environment variables or secret managers, not in code.**
+- **Log only non-sensitive data; mask tokens and IDs in logs.**
+- **Review Multilogin’s API changelog monthly.** Breaking changes are not always widely announced.
+- **Use browser DevTools to inspect all network traffic, not just documented endpoints.** Sometimes undocumented APIs are exposed.
+- **If API returns 429 (rate limit), implement retry logic with increasing delays.**
+- **For strange errors, clear all cookies and local/session storage, then re-authenticate.**
+- **For large teams, use workspace/folder IDs to segment automation and avoid conflicts.**
+- **Use Docker or virtual environments to ensure consistent script execution across machines.**
+- **Always test scripts in a staging environment before running on production data.**
+- **Join Multilogin user forums and Discords.** Many API quirks are solved by the community before official docs are updated.
+- **Share your scripts and improvements.** Open source benefits everyone.
+
+## Template: Robust API Call with Retry
+```python
+import requests
+import time
+
+def robust_get(url, headers, max_retries=5):
+	for attempt in range(max_retries):
+		resp = requests.get(url, headers=headers)
+		if resp.ok:
+			return resp.json()
+		elif resp.status_code == 429:
+			wait = 2 ** attempt
+			print(f'Rate limited, retrying in {wait}s...')
+			time.sleep(wait)
+		else:
+			print(f'Error: {resp.status_code} - {resp.text}')
+			break
+	return None
+```
+
+## Checklist Before Running Automation
+
+- [ ] API token is valid and not expired
+- [ ] Script is running in a safe environment (not production by accident)
+- [ ] All endpoints and parameters are up to date with latest docs
+- [ ] Logging and error handling are enabled
+
+**This repo is a living knowledge base of real-world automation, security, and troubleshooting wisdom from years of experience.**
 
 # 🛠️ Quick Troubleshooting Checklist
 
