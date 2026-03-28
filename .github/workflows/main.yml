@@ -1,34 +1,50 @@
-name: Flagship Maintenance (Nuclear Stealth)
+name: Daily System Pulse (Randomized)
 
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: '30 2 * * *'
-  workflow_dispatch:
+    # Sếp cứ để cố định 01:00 AM UTC (khoảng 8h sáng VN) cho cả 8 repo cũng được
+    # Vì mình sẽ dùng Random Delay bên dưới để làm lệch giờ commit.
+    - cron: '0 1 * * *' 
+  workflow_dispatch: # Cho phép bấm chạy tay để test
 
 jobs:
-  maintenance:
+  update-pulse:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Decrypt and Execute Logic
-        id: bot_logic
+      - name: Randomized Pulse Update
         run: |
-          # Đây là code Python đã được mã hóa để GitHub không thể "nhai" mất chữ của sếp
-          echo "aW1wb3J0IG9zLCByYW5kb20sIHJlLCBkYXRldGltZSwgdGltZQp0aW1lLnNsZWVwKHJhbmRvbS5yYW5kaW50KDYwLCAzMDApKQp3aXRoIG9wZW4oJ1JFQURNRS5tZCcsICdyJywgZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjoKICAgIGNvbnRlbnQgPSBmLnJlYWQoKQpub3cgPSBkYXRldGltZS5kYXRldGltZS5ub3coKQpuZXdfZGF0ZSA9IG5vdy5zdHJmdGltZSgnJVktLSVtLS0lZCcpCmNvbnRlbnQgPSByZS5zdWIocidMYXN0X1B1bHNlLVtcZCstXSstYmx1ZScsICdMYXN0X1B1bHNlLScgKyBuZXdfZGF0ZSArICctYmx1ZScsIGNvbnRlbnQpCnJhbmRvbV9pZCA9IGhleChyYW5kb20uZ2V0cmFuZGJpdHMoMzIpKVsyOl0KaGlkZGVuX3RhZyA9ICc8IS0tIFN5c3RlbV9WZXJpZmllZF9JRDogJyArIHJhbmRvbV9pZCArICcgLS0+JwppZiAnPCEtLSBTeXN0ZW0_VmVyaWZpZWRfSUQ6JyBpbiBjb250ZW50OgogICAgY29udGVudCA9IHJlLnN1YihyJzwhLS0gU3lzdGVtX1ZlcmlmaWVkX0lEOi4qPyAtLT4nLCBoaWRkZW5fdGFnLCBjb250ZW50KQplbHNlOgogICAgY29udGVudCA9IGNvbnRlbnQuc3RyaXAoKSArICdcblxuJyArIGhpZGRlbl90YWcKd2l0aCBvcGVuKCdSRUFETUUubWQnLCAndycsIGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6CiAgICBmLndyaXRlKGNvbnRlbnQpCm1zZ3MgPSBbJ2RvY3M6IG1haW50ZW5hbmNlIHVwZGF0ZScsICdjaG9yZTogZGFpbHkgcHVsc2Ugc3luYycsICdkb2NzOiB0ZWNobmljYWwgbm90ZXMgdXBkYXRlJ10KcHJpbnQocmFuZG9tLmNob2ljZShtc2dzKSk=" | base64 -d > update_script.py
+          python3 -c "
+          import datetime, re, time, random
           
-          # Chạy script và lấy message commit
-          MSG=$(python3 update_script.py)
-          echo "commit_msg=$MSG" >> $GITHUB_OUTPUT
+          # 1. NGỦ NGẪU NHIÊN: Từ 1 đến 3600 giây (tối đa 1 tiếng)
+          # Giúp giờ commit trên GitHub không bao giờ trùng nhau
+          wait_time = random.randint(1, 3600)
+          print(f'Random delay: {wait_time} seconds...')
+          time.sleep(wait_time)
+          
+          # 2. ĐỌC VÀ SỬA FILE
+          with open('README.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+          
+          current_date = datetime.datetime.now().strftime('%Y--%m--%d')
+          
+          # Tìm và thay thế chính xác link Badge Last_Pulse
+          new_content = re.sub(r'Last_Pulse-.*?-blue', f'Last_Pulse-{current_date}-blue', content)
+          
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          "
 
-      - name: Push Changes
+      - name: Commit and Push Changes
         run: |
-          git config --local user.email "support@adblogin.com"
-          git config --local user.name "ADB-Automation-Bot"
+          git config --local user.email "bot@adblogin.com"
+          git config --local user.name "multilogin-automation-bot"
           git add README.md
-          git commit -m "${{ steps.bot_logic.outputs.commit_msg }} [skip ci]" || echo "No changes"
+          git commit -m "chore: daily system pulse update $(date +'%Y-%m-%d') [skip ci]" || echo "No changes to commit"
           git push
