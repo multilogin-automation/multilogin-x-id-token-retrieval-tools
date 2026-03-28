@@ -1,0 +1,28 @@
+name: Daily System Pulse
+
+on:
+  schedule:
+    - cron: '30 2 * * *' # Chạy tự động hàng ngày
+  workflow_dispatch: # Cho phép sếp bấm nút chạy tay để test
+
+jobs:
+  update-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Update Pulse Date
+        run: |
+          CURRENT_DATE=$(date -u +"%Y-%m-%d")
+          # Chỉ thay thế nội dung nằm giữa 2 thẻ comment SYSTEM_PULSE
+          sed -i "s/.*/$CURRENT_DATE/g" README.md
+
+      - name: Commit and Push Changes
+        run: |
+          # Thiết lập tên Bot theo thương hiệu của sếp cho chuyên nghiệp
+          git config --local user.email "bot@adblogin.com"
+          git config --local user.name "multilogin-automation-bot"
+          git add README.md
+          git commit -m "chore: daily system pulse update $CURRENT_DATE [skip ci]" || echo "No changes to commit"
+          git push
