@@ -1,11 +1,11 @@
 name: Daily System Pulse
 
 permissions:
-  contents: write  # Cấp quyền Ghi cho con Bot
+  contents: write
 
 on:
   schedule:
-    - cron: '30 2 * * *'
+    - cron: '15 2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,19 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # Nâng cấp lên v4 để xóa cảnh báo vàng
+        uses: actions/checkout@v4
 
       - name: Update Pulse Date
         run: |
           CURRENT_DATE=$(date -u +"%Y-%m-%d")
-          # Tìm và thay thế chính xác nội dung giữa 2 thẻ comment
-          sed -i "s/.*/$CURRENT_DATE/g" README.md
+          # CHỐT HẠ: Chỉ thay thế nội dung nằm giữa 2 thẻ comment, KHÔNG đụng đến chỗ khác
+          sed -i "s/\(\).*\(\)/\1$CURRENT_DATE\2/g" README.md
 
       - name: Commit and Push Changes
         run: |
           git config --local user.email "bot@adblogin.com"
           git config --local user.name "multilogin-automation-bot"
           git add README.md
-          # Tránh lỗi nếu không có gì thay đổi
           git commit -m "chore: daily system pulse update $CURRENT_DATE [skip ci]" || echo "No changes to commit"
           git push
